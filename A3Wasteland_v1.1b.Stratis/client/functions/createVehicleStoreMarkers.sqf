@@ -21,6 +21,6 @@
 		_markerName setMarkerTypeLocal "mil_dot";
 		_markerName setMarkerColorLocal "ColorOrange";
 		_markerName setMarkerSizeLocal [1,1];
-		_markerName setMarkerTextLocal "Vehicle Store";
+		_markerName setMarkerTextLocal "Magasin de Véhicules";
 	};
 } forEach entities "CAManBase";

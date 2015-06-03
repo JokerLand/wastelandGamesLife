@@ -78,7 +78,7 @@ if (typeName spawnActionHandle == "SCRIPT") then
 
 //if (!isNull _ctrlButton) then
 //{
-	_header ctrlSetStructuredText parseText "It appears there was an error,<br/>please try again.";
+	_header ctrlSetStructuredText parseText "Il y a eu une erreur,<br/>veuillez réessayer.";
 	{
 		(_dialog displayCtrl _x) ctrlEnable true;
 	} forEach [respawn_Random_Button, respawn_Spawn_Button, respawn_Locations_Type, respawn_Locations_List, respawn_Preload_Checkbox];

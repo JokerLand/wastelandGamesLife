@@ -7,8 +7,8 @@
 
 #include "gui_defines.hpp"
 
-#define ERR_NOT_ENOUGH_FUNDS "You don't have enough money."
-#define ERR_MAX_BALANCE "Your account has reached the maximum balance."
+#define ERR_NOT_ENOUGH_FUNDS "Vous n'avez pas assez d'argent."
+#define ERR_MAX_BALANCE "Votre compte à atteint le plafond maximal."
 
 disableSerialization;
 private ["_dialog", "_input", "_amount", "_balance", "_maxBalance"];

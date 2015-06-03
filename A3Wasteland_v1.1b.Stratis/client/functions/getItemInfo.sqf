@@ -113,7 +113,7 @@ if (!isNil "_itemEntry") then
 					case (_itemType isKindOf "B_Parachute"):
 					{
 						//_name = getText (_weapon >> "displayName");
-						_description = "The perfect companion for wanna-be pilots!<br/>One-time use.";
+						_description = "Le companion parfait pour les pilotes en devenir !<br/>Usage unique.";
 					};
 					case (["_UAV_01_backpack_", _itemType] call fn_findString != -1):
 					{
@@ -129,11 +129,11 @@ if (!isNil "_itemEntry") then
 						_weapon = configFile >> "CfgVehicles" >> _uavType;
 
 						//_name = getText (_weapon >> "displayName") + " UAV";
-						_description = "Remote-controlled quadcopter to spy on your neighbors, pre-packaged in a backpack.<br/>UAV Terminal sold separately. Ages 8+";
+						_description = "Quadrocoptère télécommandé pour espionner vos voisins, livré dans son emballage sac à dos.<br/>Terminal Drône vendu séparément. Pas avant 8 ans.";
 					};
 					case (["_Static_Designator_", _itemType] call fn_findString != -1):
 					{
-						_description = "Remote-controlled laser designator.<br/>UAV Terminal sold separately.";
+						_description = "Désignateur laser radiocommandé.<br/>Terminal Drône vendu séparément.";
 					};
 					default
 					{
@@ -146,20 +146,20 @@ if (!isNil "_itemEntry") then
 			{
 				switch (true) do
 				{
-					case (["Default Uniform", _itemText] call fn_findString != -1):
+					case (["Uniforme par défaut", _itemText] call fn_findString != -1):
 					{
 						//_name = _itemText;
-						_description = "In case you lost your clothes";
+						_description = "Au cas où vous perdriez vos vêtements";
 					};
 					case (["_GhillieSuit", _itemType] call fn_findString != -1):
 					{
 						//_name = _itemText;
-						_description = "Disguise as a swamp monster";
+						_description = "Déguisez vous en monstre des marais";
 					};
 					case (["_Wetsuit", _itemType] call fn_findString != -1):
 					{
 						//_name = _itemText;
-						_description = "Allows faster swimming<br/>Required to fire SDAR underwater";
+						_description = "Permet de nager plus rapidement<br/>Requis pour tirer avec la SDAR sous l'eau";
 					};
 					default
 					{
@@ -178,7 +178,7 @@ if (!isNil "_itemEntry") then
 			{
 				if (["_Rebreather", _itemType] call fn_findString != -1) then
 				{
-					_description = "Underwater oxygen supply";
+					_description = "Recycleur d'air";
 				};
 
 				if (_description != "") then
@@ -203,7 +203,7 @@ if (!isNil "_itemEntry") then
 
 				if (_itemType == "G_Diving") then
 				{
-					_description = "Increases underwater visibility";
+					_description = "Permet de voir sous l'eau";
 				};
 			};
 			default
@@ -213,7 +213,7 @@ if (!isNil "_itemEntry") then
 					case (["_UavTerminal", _itemType] call fn_findString != -1):
 					{
 						//_name = getText (_weapon >> "displayName");
-						_description = getText (_weapon >> "descriptionShort") + "<br/>Assign to GPS slot.";
+						_description = getText (_weapon >> "descriptionShort") + "<br/>Assignez sur le slot GPS.";
 					};
 				};
 			};

@@ -10,9 +10,9 @@
 
 #define ANIM "AinvPknlMstpSlayWrflDnon_medic"
 #define DURATION MF_ITEMS_SPAWN_BEACON_DURATION
-#define ERR_CANCELLED "Packing Spawn Beacon Cancelled"
-#define ERR_TOO_FAR_AWAY "Packing Spawn Beacon Failed! You moved too far away from the beacon"
-#define ERR_SOMEONE_ELSE_TAKEN "Packing Spawn Beacon Failed! Someone else finished packing it up before you"
+#define ERR_CANCELLED "Repliage du point de réapparition annulé"
+#define ERR_TOO_FAR_AWAY "Repliage du point de réapparition annulé! Vous êtes allé trop loin du point"
+#define ERR_SOMEONE_ELSE_TAKEN "Repliage du point de réapparition annulé! Quelqu'un à fini de le replier avant vous"
 
 private ["_beacon", "_error", "_hasFailed", "_success"];
 _beacon = [] call mf_items_spawn_beacon_nearest;
@@ -32,7 +32,7 @@ _hasFailed = {
 		case (player distance _beacon > 5): {_text = ERR_TOO_FAR_AWAY};
 		case (doCancelAction): {doCancelAction = false; _text = ERR_CANCELLED};
 		default {
-			_text = format["Spawn Beacon is %1%2 Packed", round(_progress*100), "%"];
+			_text = format["Point de réapparition %1%2 replié", round(_progress*100), "%"];
 			_failed = false;
 		};
 	};
@@ -48,5 +48,5 @@ if (_success) then {
 	publicVariableServer "pvar_manualObjectDelete";
 	deleteVehicle _beacon;
 	[MF_ITEMS_SPAWN_BEACON, 1] call mf_inventory_add;
-	["You successfully packed the Spawn Beacon", 5] call mf_notify_client;
+	["Vous avez replié le point de réapparition", 5] call mf_notify_client;
 };

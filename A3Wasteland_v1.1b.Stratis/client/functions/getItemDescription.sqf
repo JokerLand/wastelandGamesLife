@@ -154,25 +154,25 @@ if (!isNil "_itemEntry") then
 			{
 				switch (true) do
 				{
-					case (_itemText == "Default Uniform"):
+					case (_itemText == "Uniforme par défaut"):
 					{
 						//_name = _itemText;
-						_description = "In case you lost your clothes";
+						_description = "Au cas où vous perdriez vos vêtements";
 					};
 					case (["_GhillieSuit", _itemType] call fn_findString != -1): 
 					{
 						//_name = _itemText;
-						_description = "Disguise as a swamp monster";
+						_description = "Déguisez vous en monstre des marais";
 					};
 					case (["_Wetsuit", _itemType] call fn_findString != -1): 
 					{
 						//_name = _itemText;
-						_description = "Allows faster swimming";
+						_description = "Permet de nager plus rapidement";
 					};
 					case (["_UavTerminal", _itemType] call fn_findString != -1): 
 					{
 						//_name = getText (_weapon >> "displayName");
-						_description = getText (_weapon >> "descriptionShort") + "<br/>Assign to GPS slot.";
+						_description = getText (_weapon >> "descriptionShort") + "<br/>Assigner sur le slot GPS.";
 					};
 				};
 			};

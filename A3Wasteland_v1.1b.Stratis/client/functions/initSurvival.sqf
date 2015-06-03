@@ -14,8 +14,8 @@
 #define HEALTH_DELTA TIME_DELTA*(100/HEALTH_TIME)/100
 #define HUNGER_DELTA TIME_DELTA*(100/HUNGER_TIME)
 #define THIRST_DELTA TIME_DELTA*(100/THIRST_TIME)
-#define STARVATION "<t size='2' color='#ffff00'> R.I.P.</t><br/><br/>You have died from: <br/><t size='2' color='#ff0000'>starvation</t><br/><br/>You need to eat to survive here!<br/>"
-#define DEHYDRATION "<t size='2' color='#ffff00'> R.I.P.</t><br/><br/>You have died from: <br/><t size='2' color='#ff0000'>dehydration</t><br/><br/>You need to drink to survive here!<br/>"
+#define STARVATION "<t size='2' color='#ffff00'> R.I.P.</t><br/><br/>Vous êtes mort de: <br/><t size='2' color='#ff0000'>faim</t><br/><br/>Tout à besoin de manger !<br/>"
+#define DEHYDRATION "<t size='2' color='#ffff00'> R.I.P.</t><br/><br/>Vous êtes mort de: <br/><t size='2' color='#ff0000'>déshydratation</t><br/><br/>Tout le monde à besoin de boire !<br/>"
 
 private["_warnf1","_warnf2","_warnf3","_warnf4","_warnd1","_warnd2","_warnd3","_warnd4"];
 
@@ -71,10 +71,10 @@ mf_survival_handle2 = [] spawn
 		sleep TIME_DELTA;
 		waitUntil {!respawnDialogActive};
 		switch(true) do {
-			case (hungerLevel <= 0 && _warnf1): {_warnf1 = false; hint parseText format["<t size='2' color='#ff0000'>Warning</t><br/><br/>You are now starving to death, find something to eat quickly!", round hungerLevel];};
-			case (hungerLevel <= 10 && hungerLevel > 0 && _warnf2): {_warnf2 = false; _warnf1 = true; hint parseText format["<t size='2' color='#ff0000'>Warning</t><br/><br/>You are starting to starve, you need to find something to eat otherwise you will start to lose health!", round hungerLevel];};
-			case (hungerLevel <= 25 && hungerLevel > 10 && _warnf3): {_warnf3 = false; _warnf2 = true; hint format["You haven't eaten anything in a while, your hunger level is %1\n\n You should find something to eat soon!", round hungerLevel];};
-			case (hungerLevel <= 50 && hungerLevel > 25 && _warnf4): {_warnf4 = false; _warnf3 = true; hint format["You haven't eaten anything in a while, your hunger level is %1\n\n You should find something to eat soon!", round hungerLevel];};
+			case (hungerLevel <= 0 && _warnf1): {_warnf1 = false; hint parseText format["<t size='2' color='#ff0000'>Attention</t><br/><br/>Vous êtes sur le point de mourir de faim, trouvez vite à manger !", round hungerLevel];};
+			case (hungerLevel <= 10 && hungerLevel > 0 && _warnf2): {_warnf2 = false; _warnf1 = true; hint parseText format["<t size='2' color='#ff0000'>Attention</t><br/><br/>Vous commencez à avoir sérieusement faim, trouvez rapidement quelque chose à manger pour ne pas mourir de faim !", round hungerLevel];};
+			case (hungerLevel <= 25 && hungerLevel > 10 && _warnf3): {_warnf3 = false; _warnf2 = true; hint format["Vous n'avez rien mangé depuis un moment, votre niveau de faim est à %1\n\n Vous devriez trouver à manger rapidement !", round hungerLevel];};
+			case (hungerLevel <= 50 && hungerLevel > 25 && _warnf4): {_warnf4 = false; _warnf3 = true; hint format["Vous n'avez rien mangé depuis un moment, votre niveau de faim est à %1\n\n Vous devriez trouver à manger rapidement !", round hungerLevel];};
 			case (hungerLevel > 50 && !_warnf4): {_warnf4 = true};
 		};
 	};
@@ -90,10 +90,10 @@ mf_survival_handle3 = [] spawn
 		sleep TIME_DELTA;
 		waitUntil {!respawnDialogActive};
 		switch(true) do {
-			case (thirstLevel <= 0 && _warnd1): {_warnd1 = false; hint parseText format["<t size='2' color='#ff0000'>Warning</t><br/><br/>You are now suffering from severe dehydration, find something to drink quickly!", round thirstLevel];};
-			case (thirstLevel <= 10 && thirstLevel > 0 && _warnd2): {_warnd2 = false; _warnd1 = true; hint parseText format["<t size='2' color='#ff0000'>Warning</t><br/><br/>You haven't drank anything in along time, you should find someting to drink soon or you'll start to die from dehydration!", round thirstLevel];};
-			case (thirstLevel <= 25 && thirstLevel > 10 && _warnd3): {_warnd3 = false; _warnd2 = true; hint format["You haven't drank anything in a while, your thirst level is %1\n\nYou should find something to drink soon.", round thirstLevel];};
-			case (thirstLevel <= 50 && thirstLevel > 25 && _warnd4): {_warnd4 = false; _warnd3 = true; hint format["You haven't drank anything in a while, your thirst level is %1", round thirstLevel];};
+			case (thirstLevel <= 0 && _warnd1): {_warnd1 = false; hint parseText format["<t size='2' color='#ff0000'>Attention</t><br/><br/>Vous souffrez de déshydratation sévère, trouvez vite à boire !", round thirstLevel];};
+			case (thirstLevel <= 10 && thirstLevel > 0 && _warnd2): {_warnd2 = false; _warnd1 = true; hint parseText format["<t size='2' color='#ff0000'>Attention</t><br/><br/>Vous n'avez pas bu depuis un certain temps, vous devriez boire rapidement pour ne pas commencer à mourir de déshydratation !", round thirstLevel];};
+			case (thirstLevel <= 25 && thirstLevel > 10 && _warnd3): {_warnd3 = false; _warnd2 = true; hint format["Vous n'avez rien bu depuis un moment, votre niveau d'hydratation est à %1\n\nVous devriez trouver à boire rapidement !", round thirstLevel];};
+			case (thirstLevel <= 50 && thirstLevel > 25 && _warnd4): {_warnd4 = false; _warnd3 = true; hint format["Vous n'avez rien bu depuis un moment, votre niveau d'hydratation est à %1", round thirstLevel];};
 			case (thirstLevel > 50 && !_warnd4): {_warnd4 = true};
 		};
 	};

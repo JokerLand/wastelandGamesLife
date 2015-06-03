@@ -21,7 +21,7 @@ while {true} do
 
 		player connectTerminalToUAV objNull;
 		playSound "FD_CP_Not_Clear_F";
-		["You are not allowed to connect to this unmanned vehicle.", 5] call mf_notify_client;
+		["Vous ne pouvez pas connecter ce véhicule inconnu.", 5] call mf_notify_client;
 	};
 
 	waitUntil {sleep 0.1; _uav != getConnectedUAV player};

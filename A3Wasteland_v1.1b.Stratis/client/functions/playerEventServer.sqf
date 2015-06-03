@@ -14,7 +14,7 @@ switch (toLower _type) do
 
 		if (_amount > 0) then
 		{
-			[format ["You have picked up $%1", [_amount] call fn_numbersText], 5] call mf_notify_client;
+			[format ["Vous avez ramassé $%1", [_amount] call fn_numbersText], 5] call mf_notify_client;
 
 			if (["A3W_playerSaving"] call isConfigOn) then
 			{
@@ -45,7 +45,7 @@ switch (toLower _type) do
 		else
 		{
 			playSound "FD_CP_Not_Clear_F";
-			["Invalid transaction, please try again.", 5] call mf_notify_client;
+			["Transaction invalide, veuillez réessayer.", 5] call mf_notify_client;
 		};
 	};
 
@@ -57,9 +57,9 @@ switch (toLower _type) do
 		if (_amount != 0) then
 		{
 			_message = if (isStreamFriendlyUIEnabled) then {
-				"You have successfully transferred $%1"
+				"Vous avez fait un virement de $%1"
 			} else {
-				"You have successfully transferred $%1 to %2"
+				"Vous avez fait un virement de $%1 à %2"
 			};
 
 			playSound "defaultNotification";
@@ -69,7 +69,7 @@ switch (toLower _type) do
 		else
 		{
 			playSound "FD_CP_Not_Clear_F";
-			["Invalid transaction, please try again.", 5] call mf_notify_client;
+			["Transaction invalide, veuillez réessayer.", 5] call mf_notify_client;
 			true call mf_items_atm_refresh;
 		};
 	};
@@ -80,9 +80,9 @@ switch (toLower _type) do
 		_name = [_this, 2, "", [""]] call BIS_fnc_param;
 
 		_message = if (isStreamFriendlyUIEnabled) then {
-			"You have received $%1 from a bank transfer" 
+			"Vous avez reçu un virement de $%1" 
 		} else {
-			"%2 has transferred $%1 to your bank account"
+			"%2 vous à fait un virement de $%1 sur votre compte bancaire"
 		};
 
 		playSound "FD_Finish_F";

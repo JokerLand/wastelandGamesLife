@@ -5,7 +5,7 @@
 
 private ["_playerMenuAction", "_veh", "_playerMenuID"]
 
-_playerMenuAction = [format ["<img image='client\icons\playerMenu.paa' color='%1'/> <t color='%1'>[</t>Player Menu<t color='%1'>]</t>", "#FF8000"], "client\systems\playerMenu\init.sqf", [], -10, false]; //, false, "", ""];
+_playerMenuAction = [format ["<img image='client\icons\playerMenu.paa' color='%1'/> <t color='%1'>[</t>Menu joueur<t color='%1'>]</t>", "#FF8000"], "client\systems\playerMenu\init.sqf", [], -10, false]; //, false, "", ""];
 
 waitUntil {!isNull player};
 

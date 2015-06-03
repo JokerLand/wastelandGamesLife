@@ -18,7 +18,7 @@ MF_ITEMS_SPAWN_BEACON_STEAL_DURATION = 60;
 MF_ITEMS_SPAWN_BEACON_DURATION = 30;
 _deploy = build("deploy.sqf");
 _icon = "client\icons\spawnbeacon.paa";
-[MF_ITEMS_SPAWN_BEACON, "Spawn Beacon", _deploy, "Land_Sleeping_bag_folded_F", _icon, 1] call mf_inventory_create;
+[MF_ITEMS_SPAWN_BEACON, "Point de réapparition", _deploy, "Land_Sleeping_bag_folded_F", _icon, 1] call mf_inventory_create;
 
 mf_items_spawn_beacon_nearest = {
 	_beacon = objNull;
@@ -37,13 +37,13 @@ mf_items_spawn_beacon_can_use = build("can_use.sqf");
 
 private "_condition";
 _condition = "'' == [] call mf_items_spawn_beacon_can_pack;";
-_pack =[format ["<img image='%1'/> Pack Spawn Beacon", _icon], path("pack.sqf"), [], 1, true, false, "", _condition];
+_pack =[format ["<img image='%1'/> Replier le point de réapparition", _icon], path("pack.sqf"), [], 1, true, false, "", _condition];
 ["beacon-pack", _pack] call mf_player_actions_set;
 
 _condition = "'' == [] call mf_items_spawn_beacon_can_steal;";
-_steal = [format ["<img image='%1'/> Steal Spawn Beacon", _icon], path("steal.sqf"), [], 1, true, false, "", _condition];
+_steal = [format ["<img image='%1'/> Voler le point de réapparition", _icon], path("steal.sqf"), [], 1, true, false, "", _condition];
 ["beacon-steal", _steal] call mf_player_actions_set;
 
 _condition = "'' == [] call mf_items_spawn_beacon_can_pack && {playerSide != independent}";
-_pack =[format ["<img image='%1'/> Change Spawn Permissions", _icon], path("toggle_spawn_permissions.sqf"), [], 1, true, false, "", _condition];
+_pack =[format ["<img image='%1'/> Changer les permissions de réapparition", _icon], path("toggle_spawn_permissions.sqf"), [], 1, true, false, "", _condition];
 ["beacon-spawn-toggle", _pack] call mf_player_actions_set;

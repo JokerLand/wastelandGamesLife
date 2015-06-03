@@ -7,14 +7,14 @@
 
 #include "gui_defines.hpp"
 
-#define ERR_NOT_ENOUGH_FUNDS "You don't have enough money in your account."
-#define ERR_INVALID_ACCOUNT "The selected account is invalid."
-#define ERR_MAX_BALANCE_REACHED "The selected account has reached its maximum balance.\nYou cannot send any more money to it."
-#define ERR_MAX_BALANCE_LIMIT "Due to balance restrictions, you cannot transfer more than $%1 to this account."
+#define ERR_NOT_ENOUGH_FUNDS "Vous n'avez pas assez d'argent sur votre compte."
+#define ERR_INVALID_ACCOUNT "Le montant sélectionné est invalide."
+#define ERR_MAX_BALANCE_REACHED "Le compte sélectionné à atteint son plafond maximal.\nVous ne pouvez pas lui envoyer d'argent."
+#define ERR_MAX_BALANCE_LIMIT "Dû à des restrictions, vous ne pouvez pas faire un virement de plus de $%1 vers ce compte."
 
-#define MSG_CONFIRM_LINE1 "You are about to transfer $%1 to %2."
-#define MSG_CONFIRM_LINE2 "Transfer fee: $%2"
-#define MSG_CONFIRM_LINE3 "Total cost: $%1"
+#define MSG_CONFIRM_LINE1 "Vous vous apprêtez à transférer $%1 à %2."
+#define MSG_CONFIRM_LINE2 "Frais de virement: $%2"
+#define MSG_CONFIRM_LINE3 "Coût total: $%1"
 
 disableSerialization;
 private ["_dialog", "_input", "_accDropdown", "_selAcc", "_selAccName", "_amount", "_fee", "_feeAmount", "_total", "_balance", "_maxBalance", "_destBalance", "_confirmMsg", "_transferKey", "_deposit", "_withdraw", "_controls"];
@@ -77,7 +77,7 @@ format [MSG_CONFIRM_LINE3, [_total] call fn_numbersText];
 	_amount = _this select 2;
 	_feeAmount = _this select 3;
 
-	if !([_confirmMsg, "Confirm", true, true] call BIS_fnc_guiMessage) exitWith {};
+	if !([_confirmMsg, "Confirmer", true, true] call BIS_fnc_guiMessage) exitWith {};
 
 	player setVariable ["bmoney", (player getVariable ["bmoney", 0]) - (_amount + _feeAmount), false];
 	false call mf_items_atm_refresh;

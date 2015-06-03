@@ -62,7 +62,7 @@ if (isNil "playerData_alive" || !isNil "playerData_resetPos") then
 {
 	[player, "AmovPknlMstpSnonWnonDnon"] call switchMoveGlobal;
 
-	9999 cutText ["Loading...", "BLACK", 0.01];
+	9999 cutText ["Chargement...", "BLACK", 0.01];
 
 	true spawn client_respawnDialog;
 
