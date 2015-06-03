@@ -9,10 +9,10 @@
 //@file Argument: [_vehicle] the vehicle to test
 //@file Argument: [] automatically find the nearest vehicle
 
-#define ERR_NO_VEHICLE "No vehicle within range."
-#define ERR_IN_VEHICLE "You can't do this while in a vehicle."
-#define ERR_FULL "This vehicle is already full"
-#define ERR_NO_FUEL "You have no full fuel cans"
+#define ERR_NO_VEHICLE "Aucun véhicule autour de vous."
+#define ERR_IN_VEHICLE "Vous ne pouvez pas faire ça depuis un véhicule."
+#define ERR_FULL "Ce véhicule est déja plein"
+#define ERR_NO_FUEL "Vous n'avez pas de jerrycans"
 #define ITEM_COUNT(ITEMID) ITEMID call mf_inventory_count
 private ["_vehicle", "_error"];
 _vehicle = objNull;

@@ -23,8 +23,8 @@ _playerData = _groupListBox lbData _index;
 { if (getPlayerUID _x == _playerData) exitWith { _target = _x } } forEach (call allPlayers);
 
 //Checks
-if (isNil "_target") exitWith {player globalChat "you must select someone to kick first"};
-if (_target == player) exitWith {player globalChat "you can't kick yourself"};
+if (isNil "_target") exitWith {player globalChat "Vous devez d'abord sélectionner quelqu'un à kicker"};
+if (_target == player) exitWith {player globalChat "Vous ne pouvez pas vous kicker vous même"};
 
 _group = group _target;
 pvar_updateTerritoryMarkers = [_target, [_group getVariable ["currentTerritories", []], false, _group, false]];
@@ -34,4 +34,4 @@ publicVariable "pvar_updateTerritoryMarkers";
 _target setVariable ["currentGroupRestore", grpNull, true];
 _target setVariable ["currentGroupIsLeader", false, true];
 
-player globalChat format["you have kicked %1 from the group",name _target];
+player globalChat format["Vous avez kické %1 du groupe",name _target];

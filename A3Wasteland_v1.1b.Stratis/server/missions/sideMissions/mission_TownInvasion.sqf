@@ -62,7 +62,7 @@ _setupObjects =
 	// move them into buildings
 	[_aiGroup, _missionPos, _buildingRadius, _fillEvenly, _putOnRoof] call moveIntoBuildings;
 
-	_missionHintText = format ["Hostiles have taken over <br/><t size='1.25' color='%1'>%2</t><br/><br/>There seem to be <t color='%1'>%3 enemies</t> hiding inside or on top of buildings. Get rid of them all, and take their supplies!<br/>Watch out for those windows!", sideMissionColor, _townName, _nbUnits];
+	_missionHintText = format ["Des hostiles ont capturé <br/><t size='1.25' color='%1'>%2</t><br/><br/>Il semblerait qu'il y ai <t color='%1'>%3 ennemis</t> se cachant dans ou au-dessus des bâtiments. Débarassez vous d'eux et récupérez leur équipement !<br/>Attention aux fenêtres !", sideMissionColor, _townName, _nbUnits];
 };
 
 _waitUntilMarkerPos = nil;
@@ -80,7 +80,7 @@ _successExec =
 	// Mission completed
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
 
-	_successHintMessage = format ["Nice work!<br/><br/><t color='%1'>%2</t><br/>is a safe place again!<br/>Their belongings are now yours to take!", sideMissionColor, _townName];
+	_successHintMessage = format ["Beau travail !<br/><br/><t color='%1'>%2</t><br/>est de nouveau sûre !<br/>Vous êtes libre de récupérer leur équipement !", sideMissionColor, _townName];
 	{ deleteVehicle _x } forEach [_tent1, _chair1, _chair2, _cFire1];
 };
 

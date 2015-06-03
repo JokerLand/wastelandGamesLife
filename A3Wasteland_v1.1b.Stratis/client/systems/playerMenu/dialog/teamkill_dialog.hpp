@@ -29,7 +29,7 @@ class TeamkillDialog {
 		class MainTitle:w_RscText {
 			idc = tkDialogTitle;
 			style = ST_CENTER;
-			text = "You have been team killed.";
+			text = "Vous avez été tué par un tir allié.";
 			sizeEx = 0.04;
 			shadow = 2;
 
@@ -64,7 +64,7 @@ class TeamkillDialog {
 	class controls {
 		class ForgiveButton:w_RscButton {
 			idc = tkDialogForgive;
-			text = "Forgive";
+			text = "Pardonner";
 			onButtonClick = "false call teamkillAction";
 
 			size = 0.031;
@@ -88,7 +88,7 @@ class TeamkillDialog {
 
 		class PunishButton:w_RscButton {
 			idc = tkDialogPunish;
-			text = "Punish";
+			text = "Punir";
 			onButtonClick = "true call teamkillAction";
 
 			size = 0.031;

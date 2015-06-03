@@ -1,10 +1,10 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
-#define ERR_IN_VEHICLE "Can't do that while in a vehicle"
-#define ERR_TOO_FAR "You are too far away"
-#define ERR_SAME_SIDE "The Warchest is already owned by your team"
-#define ERR_NOT_WARCHEST "That object is not a warchest"
+#define ERR_IN_VEHICLE "Vous ne pouvez pas faire ça depuis un véhicule"
+#define ERR_TOO_FAR "Vous êtes trop loin"
+#define ERR_SAME_SIDE "Votre équipe est déja propriétaire du coffre"
+#define ERR_NOT_WARCHEST "Cet objet n'est pas un coffre"
 
 private ["_warchest", "_error"];
 _warchest = objNull;

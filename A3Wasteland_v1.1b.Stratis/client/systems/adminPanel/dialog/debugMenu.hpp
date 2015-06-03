@@ -40,7 +40,7 @@ class DebugMenu
 		class DebugMenu_Title:w_RscText
 		{
 			idc=-1;
-			text="Debug Menu";
+			text="Menu Débug";
 			x=0.29;
 			y=0.108;
 			w=0.088;
@@ -62,7 +62,7 @@ class DebugMenu
 		class DebugMenu_activate:w_RscButton
 		{
 			idc=-1;
-			text="Select";
+			text="Sélectionner";
 			onButtonClick = "[2] execVM 'client\systems\adminPanel\optionSelect.sqf'";
 			x=0.345;
 			y=0.70;

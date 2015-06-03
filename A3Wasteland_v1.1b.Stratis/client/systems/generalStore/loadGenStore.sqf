@@ -15,7 +15,7 @@ _genshopDialog = createDialog "genstored";
 
 _Dialog = findDisplay genstore_DIALOG;
 _playerMoney = _Dialog displayCtrl genstore_money;
-_playerMoney ctrlSetText format["Cash: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
+_playerMoney ctrlSetText format["Argent: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
 if (!isNil "_this") then { _owner = _this select 0 };
 if (!isNil "_owner") then
 {

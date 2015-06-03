@@ -40,7 +40,7 @@ class ModMenu
 		class ModMenu_Title:w_RscText
 		{
 			idc=-1;
-			text="Mod Menu";
+			text="Menu Mod";
 			x=0.29;
 			y=0.108;
 			w=0.088;
@@ -62,7 +62,7 @@ class ModMenu
 		class ModMenu_activate:w_RscButton
 		{
 			idc=-1;
-			text="Select";
+			text="Sélectionner";
 			onButtonClick = "[0] execVM 'client\systems\adminPanel\optionSelect.sqf'";
 			x=0.345;
 			y=0.70;

@@ -29,7 +29,7 @@ _displayTerritoryActivity =
 
 	_boldFont = "PuristaBold";
 
-	_descriptiveName = "Unknown territory";
+	_descriptiveName = "Territoire inconnu";
 
 	// Expensive lookup for the HUD, so cache it
 	if (_territoryName != _lastTerritoryName) then
@@ -60,26 +60,26 @@ _displayTerritoryActivity =
 				_territoryCaptureCountdown = (_territoryCaptureCountdown - _seconds) / 60;
 				_minutes = _territoryCaptureCountdown % 60;
 
-				_territoryActionText = format["Capturing territory in about <t font='%1'>%2 minutes</t>", _boldFont, _minutes + 1];
+				_territoryActionText = format["Capture du territoire dans approximativement <t font='%1'>%2 minutes</t>", _boldFont, _minutes + 1];
 			}
 			else
 			{
 				if (_territoryCaptureCountdown < 5) then
 				{
-					_territoryActionText = "Territory transition in progress...";
+					_territoryActionText = "Transition du territoire en cours...";
 				}
 				else
 				{
-					_territoryActionText = format["Capturing territory in <t font='%1'>%2 seconds</t>", _boldFont, _territoryCaptureCountdown];
+					_territoryActionText = format["Capture du territoire dans approximativement <t font='%1'>%2 seconds</t>", _boldFont, _territoryCaptureCountdown];
 				};
 			};
 		};
-		case "BLOCKEDATTACKER": { _territoryActionText = "Territory capture blocked" };
-		case "BLOCKEDDEFENDER": { _territoryActionText = "Territory under attack" };
-		case "RESET":           { _territoryActionText = "Territory capture started" };
+		case "BLOCKEDATTACKER": { _territoryActionText = "Capture du territoire bloquée" };
+		case "BLOCKEDDEFENDER": { _territoryActionText = "Territoire attaqué !" };
+		case "RESET":           { _territoryActionText = "Capture du territoire démarrée" };
 	};
 
-	_activityMessage = format ["Location: <t font='%1'>%2</t><br/>%3", _boldFont, _descriptiveName, _territoryActionText];
+	_activityMessage = format ["Localisation: <t font='%1'>%2</t><br/>%3", _boldFont, _descriptiveName, _territoryActionText];
 	_topLeftIconText = format ["<img size='%1' image='territory\client\icons\territory_cap_white.paa'/>", 3 * (0.55 / (getResolution select 5))];
 
 	[_topLeftIconText, _activityMessage]
@@ -303,7 +303,7 @@ while {true} do
 					if (_globalVoiceWarning < _globalVoiceMaxWarns) then
 					{
 						uiNamespace setVariable ["BIS_fnc_guiMessage_status", false];
-						["Please stop using the global voice channel, or you will be killed and crashed.", _msgTitle] spawn BIS_fnc_guiMessage;
+						["Merci de ne pas utiliser votre micro dans le canal global, ou vous serez tué et déchiqueté.", _msgTitle] spawn BIS_fnc_guiMessage;
 					}
 					else
 					{
@@ -313,7 +313,7 @@ while {true} do
 							setPlayerRespawnTime 1e11;
 							player setDamage 1;
 							uiNamespace setVariable ["BIS_fnc_guiMessage_status", false];
-							_msgBox = ["You have exceeded the tolerance limit for using the global voice channel. Goodbye.", _this] spawn BIS_fnc_guiMessage;
+							_msgBox = ["Vous avez atteint la limite de tolérnce d'utilisation du canal global. A+.", _this] spawn BIS_fnc_guiMessage;
 							_time = diag_tickTime;
 							waitUntil {scriptDone _msgBox || diag_tickTime - _time >= 5};
 							preprocessFile "client\functions\quit.sqf"; // CTD

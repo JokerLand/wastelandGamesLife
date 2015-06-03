@@ -4,10 +4,10 @@
 #include "mutex.sqf"
 #define DURATION MF_ITEMS_WARCHEST_HACK_DURATION
 #define ANIMATION "AinvPknlMstpSlayWrflDnon_medic"
-#define ERR_IN_VEHICLE "Warchest Hacking Failed! You can't do that in a vehicle."
-#define ERR_TOO_FAR_AWAY "Warchest Hacking Failed! You are too far away."
-#define ERR_HACKED "Warchest Hacking Failed! Someone else just finished hacking this warchest."
-#define ERR_CANCELLED "Warchest Hacking Cancelled"
+#define ERR_IN_VEHICLE "Vol du coffre échoué! Vous ne pouvez pas faire ça depuis un véhicule."
+#define ERR_TOO_FAR_AWAY "Vol du coffre échoué! Vous êtes trop loin."
+#define ERR_HACKED "Vol du coffre échoué! Quelqu'un d'autre à déja volé le coffre."
+#define ERR_CANCELLED "Vol du coffre annulé"
 
 private ["_warchest", "_error", "_success"];
 _warchest = [] call mf_items_warchest_nearest;
@@ -28,7 +28,7 @@ _checks = {
 		case (_warchest getVariable ["side", sideUnknown] == playerSide): {_text = ERR_HACKED};
 		case (doCancelAction): {_text = ERR_CANCELLED; doCancelAction = false;};
 		default {
-			_text = format["Warchest Hacking %1%2 Complete", round(100 * _progress), "%"];
+			_text = format["Vol du coffre %1%2 terminé", round(100 * _progress), "%"];
 			_failed = false;
 		};
 	};
@@ -55,6 +55,6 @@ if (_success) then {
 	};
 	_money = (player getVariable ["cmoney", 0]) + _amount;
 	player setVariable ["cmoney", _money, true];
-	[format["Warchest Hacking Complete! You stole $%1", [_amount] call fn_numbersText], 5] call mf_notify_client;
+	[format["Vol du coffre terminé ! Vous avez volé $%1", [_amount] call fn_numbersText], 5] call mf_notify_client;
 };
 _success;

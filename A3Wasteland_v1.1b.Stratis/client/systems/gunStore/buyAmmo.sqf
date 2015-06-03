@@ -7,7 +7,7 @@
 //	@file Created: 20/11/2012 05:13
 //	@file Args: [int (0 = buy to player 1 = buy to crate)]
 
-if (!isNil "storePurchaseHandle" && {typeName storePurchaseHandle == "SCRIPT"} && {!scriptDone storePurchaseHandle}) exitWith {hint "Please wait, your previous purchase is being processed"};
+if (!isNil "storePurchaseHandle" && {typeName storePurchaseHandle == "SCRIPT"} && {!scriptDone storePurchaseHandle}) exitWith {hint "Veuillez patienter, votre précédent achat est en traitement"};
 
 #include "dialog\gunstoreDefines.sqf";
 //#include "addons\proving_ground\defs.hpp"
@@ -38,7 +38,7 @@ storePurchaseHandle = _this spawn
 	_showInsufficientFundsError =
 	{
 		_itemText = _this select 0;
-		hint format ["You don't have enough money for ""%1""", _itemText];
+		hint format ["Vous n'avez pas assez d'argent pour ""%1""", _itemText];
 		playSound "FD_CP_Not_Clear_F";
 		_price = -1;
 	};
@@ -46,7 +46,7 @@ storePurchaseHandle = _this spawn
 	_showInsufficientSpaceError =
 	{
 		_itemText = _this select 0;
-		hint format ["You don't have enough space for ""%1""", _itemText];
+		hint format ["Vous n'avez pas assez de place pour ""%1""", _itemText];
 		playSound "FD_CP_Not_Clear_F";
 		_price = -1;
 	};
@@ -85,8 +85,8 @@ storePurchaseHandle = _this spawn
 	if (!isNil "_price" && {_price > -1}) then
 	{
 		player setVariable ["cmoney", _playerMoney - _price, true];
-		_playerMoneyText ctrlSetText format ["Cash: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
-		hint "Purchase successful!";
+		_playerMoneyText ctrlSetText format ["Argent: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
+		hint "Achat effectué !";
 		playSound "FD_Finish_F";
 	};
 };

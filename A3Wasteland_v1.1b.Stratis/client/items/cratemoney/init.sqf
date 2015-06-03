@@ -24,9 +24,9 @@ mf_items_cratemoney_nearest =
 
 
 _condition = "call mf_items_cratemoney_can_access == '' && (call mf_items_cratemoney_nearest) getVariable ['cmoney', 0] == 0";
-_action = ["<img image='client\icons\money.paa'/> Deposit Money", mf_items_cratemoney_access, [], 2, false, true, "", _condition];
+_action = ["<img image='client\icons\money.paa'/> Déposer de l'argent", mf_items_cratemoney_access, [], 2, false, true, "", _condition];
 ["cratemoney-access-empty", _action] call mf_player_actions_set;
 
 _condition = "call mf_items_cratemoney_can_access == '' && (call mf_items_cratemoney_nearest) getVariable ['cmoney', 0] != 0";
-_action = ["<img image='client\icons\money.paa'/> Access Money Stash", mf_items_cratemoney_access, [], 2, false, true, "", _condition];
+_action = ["<img image='client\icons\money.paa'/> Accéder à la planque d'argent", mf_items_cratemoney_access, [], 2, false, true, "", _condition];
 ["cratemoney-access", _action] call mf_player_actions_set;

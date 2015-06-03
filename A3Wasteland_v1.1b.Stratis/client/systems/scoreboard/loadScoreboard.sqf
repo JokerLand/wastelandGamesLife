@@ -182,7 +182,7 @@ _code =
 
 				_teamName = if (_isGroup) then
 				{
-					format ["%1's group", name leader _team]
+					format ["Groupe de %1", name leader _team]
 				}
 				else
 				{

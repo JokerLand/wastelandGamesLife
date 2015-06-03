@@ -114,7 +114,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "picture");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "displayName");
 
-	_missionHintText = format ["An armed <t color='%2'>%1</t> is patrolling the island. Intercept it and recover its cargo!", _vehicleName, sideMissionColor];
+	_missionHintText = format ["Un hélicoptère armé <t color='%2'>%1</t> patrouille sur l'île. Interceptez le et récupérez sa cargaison !", _vehicleName, sideMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -139,7 +139,7 @@ _successExec =
 	_box2 setDir random 360;
 	[_box2, "mission_USLaunchers"] call fn_refillbox;
 
-	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
+	_successHintMessage = "Le ciel est de nouveau dégagé, la patrouille ennemi à été neutralisé ! Les caisses de munitions sont tombées près de l'épave.";
 };
 
 _this call sideMissionProcessor;

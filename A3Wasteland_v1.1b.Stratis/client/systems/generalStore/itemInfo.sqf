@@ -37,5 +37,5 @@ _itemConfigInfo = [_itemText, _itemData] call getItemInfo;
 _price = _itemConfigInfo select 1;
 _description = _itemConfigInfo select 2;
 
-_itemlisttext ctrlSetText format ["Price: $%1", [_price] call fn_numbersText];
+_itemlisttext ctrlSetText format ["Prix: $%1", [_price] call fn_numbersText];
 _itemDesc ctrlSetStructuredText parseText _description;

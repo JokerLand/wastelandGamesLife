@@ -73,7 +73,7 @@ savePlayerHandle = _this spawn
 
 			if (_manualSave) then
 			{
-				cutText ["\nPlayer saved!", "PLAIN DOWN", 0.2];
+				cutText ["\nInformations joueur sauvegardées !", "PLAIN DOWN", 0.2];
 			};
 		};
 

@@ -51,11 +51,11 @@ if (_uid call isAdmin) then
 					};
 
 					[player, _target] call camera_attach_to_target;
-					player commandChat format ["Viewing %1.", name _target];
-					_spectateButton ctrlSetText "Spectating";
+					player commandChat format ["Surveillance de %1.", name _target];
+					_spectateButton ctrlSetText "Surveillance";
 				} else {
-					_spectateButton ctrlSetText "Spectate";
-					player commandChat format ["No Longer Viewing.", name _target];
+					_spectateButton ctrlSetText "Surveiller";
+					player commandChat format ["Arrêt de la surveillance.", name _target];
 
 					if ([player] call camera_enabled) then
 					{
@@ -68,7 +68,7 @@ if (_uid call isAdmin) then
 		{
 			_warnText = ctrlText _warnMessage;
 			_playerName = name player;
-			[format ["Message from Admin: %1", _warnText], "A3W_fnc_titleTextMessage", _target, false] call A3W_fnc_MP;
+			[format ["Message d'admin: %1", _warnText], "A3W_fnc_titleTextMessage", _target, false] call A3W_fnc_MP;
 		};
 		case 2: //Slay
 		{

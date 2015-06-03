@@ -54,7 +54,7 @@ if (_uid call isAdmin) then
 				_name = gettext(configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName");
 				_objPos = getPosATL _x;
 				_dist = floor(player distance _x);
-				_str = format["%1 %2m away at %3", _name, _dist, _objPos];
+				_str = format["%1 %2m a %3", _name, _dist, _objPos];
 				_index = _objectListBoxCtrl lbAdd _str;
 				_objectListBoxCtrl lbSetData [_index, str(_objPos)];
 				//diag_log format["Setting data to %1", str(_objPos)];
@@ -69,7 +69,7 @@ if (_uid call isAdmin) then
 			} forEach _objects;
 
 			if (count _objects > 0) then {
-				player globalChat format["Added %1 entries on the map", count _objects];
+				player globalChat format["Ajout d' %1 entrées sur la map", count _objects];
 			};
 		};
 		case OBJECT_SEARCH_ACTION_TELEPORT:
@@ -91,7 +91,7 @@ if (_uid call isAdmin) then
 			_newPlayerPos = getPosATL player;
 			_dir = [player, _objPos] call BIS_fnc_dirTo;
 			player setDir _dir;
-			player globalChat "Teleported to your object";
+			player globalChat "Téléportation vers votre objet";
 		};
 		case OBJECT_SEARCH_ACTION_CLEAR_MAP:
 		{
@@ -100,7 +100,7 @@ if (_uid call isAdmin) then
 					deleteMarkerLocal _x;
 				} forEach objectSearchMapMarkers;
 				objectSearchMapMarkers = [];
-				player globalChat "Map cleared";
+				player globalChat "Map nettoyée";
 			};
 		};
 	};

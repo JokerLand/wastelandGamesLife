@@ -5,7 +5,7 @@
 //	@file Author: AgentRev
 //	@file Function: mf_verify_money_input
 
-#define ERR_LESS_THAN_ONE "The amount must be at least $1"
+#define ERR_LESS_THAN_ONE "Le montant doit être au moins d' $1"
 
 disableSerialization;
 private ["_input", "_amount"];

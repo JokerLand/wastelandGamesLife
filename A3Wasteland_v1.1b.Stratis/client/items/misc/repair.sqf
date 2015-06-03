@@ -10,12 +10,12 @@
 #define DURATION 20
 #define REPAIR_RANGE 6;
 #define ANIMATION "AinvPknlMstpSlayWrflDnon_medic"
-#define ERR_NO_VEHICLE "You are not close enough to a vehicle that needs repairing"
-#define ERR_IN_VEHICLE "Repairing Failed! You can't do that in a vehicle"
-#define ERR_FULL_HEALTH "Repairing Failed! The vehicle is already repaired"
-#define ERR_DESTROYED "The vehicle is too damaged to repair"
-#define ERR_TOO_FAR_AWAY "Repairing Failed! You moved too far away from the vehicle"
-#define ERR_CANCELLED "Repairing Cancelled!"
+#define ERR_NO_VEHICLE "Vous n'êtes pas assez proche d'un véhicule qui nécessite des réparations"
+#define ERR_IN_VEHICLE "Réparation échouée! Vous ne pouvez pas faire ça depuis un véhicule"
+#define ERR_FULL_HEALTH "Réparation échouée! Le véhicule est déja réparé"
+#define ERR_DESTROYED "Le véhicule est trop endommagé pour pouvoir le réparer"
+#define ERR_TOO_FAR_AWAY "Réparation échouée! Vous êtes parti trop loin du véhicule"
+#define ERR_CANCELLED "Réparation annulée!"
 
 private ["_vehicle", "_hitPoints", "_checks", "_success"];
 _vehicle = call mf_repair_nearest_vehicle;
@@ -35,7 +35,7 @@ _checks = {
 		case (damage _vehicle < 0.05 && {{_vehicle getHitPointDamage (configName _x) > 0.05} count _hitPoints == 0}): {_error = ERR_FULL_HEALTH}; // 0.2 is the threshold at which wheel damage causes slower movement
 		case (doCancelAction): {_text = ERR_CANCELLED; doCancelAction = false;};
 		default {
-			_text = format["Repairing %1%2 Complete", round(100 * _progress), "%"];
+			_text = format["Réparation %1%2 terminée", round(100 * _progress), "%"];
 			_failed = false;
 		};
 	};
@@ -46,6 +46,6 @@ _success = [DURATION, ANIMATION, _checks, [_vehicle]] call a3w_actions_start;
 
 if (_success) then {
 	[[netId _vehicle], "mf_remote_repair", _vehicle] call A3W_fnc_MP;
-	["Repairing complete!", 5] call mf_notify_client;
+	["Réparation terminée !", 5] call mf_notify_client;
 };
 _success;

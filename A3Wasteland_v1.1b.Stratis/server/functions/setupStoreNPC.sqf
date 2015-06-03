@@ -37,21 +37,21 @@ if (hasInterface) then
 	{
 		case (["GenStore", _npcName] call _startsWith):
 		{
-			_npc addAction ["<img image='client\icons\store.paa'/> Open General Store", "client\systems\generalStore\loadGenStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
+			_npc addAction ["<img image='client\icons\store.paa'/> Ouvirir Magasin Général", "client\systems\generalStore\loadGenStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
 		};
 		case (["GunStore", _npcName] call _startsWith):
 		{
-			_npc addAction ["<img image='client\icons\store.paa'/> Open Gun Store", "client\systems\gunStore\loadgunStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
+			_npc addAction ["<img image='client\icons\store.paa'/> Ouvrir Armurerie", "client\systems\gunStore\loadgunStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
 		};
 		case (["VehStore", _npcName] call _startsWith):
 		{
-			_npc addAction ["<img image='client\icons\store.paa'/> Open Vehicle Store", "client\systems\vehicleStore\loadVehicleStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
+			_npc addAction ["<img image='client\icons\store.paa'/> Ouvrir Magasin Véhicules", "client\systems\vehicleStore\loadVehicleStore.sqf", [], 1, true, true, "", STORE_ACTION_CONDITION];
 		};
 	};
 
-	_npc addAction ["<img image='client\icons\money.paa'/> Sell crate", "client\systems\selling\sellCrateItems.sqf", [false, false, true], 0.99, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_CRATE_CONDITION];
-	_npc addAction ["<img image='client\icons\money.paa'/> Sell contents", "client\systems\selling\sellCrateItems.sqf", [], 0.98, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_CONTENTS_CONDITION];
-	_npc addAction ["<img image='client\icons\money.paa'/> Sell last vehicle contents", "client\systems\selling\sellVehicleItems.sqf", [], 0.97, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
+	_npc addAction ["<img image='client\icons\money.paa'/> Vendre caisse", "client\systems\selling\sellCrateItems.sqf", [false, false, true], 0.99, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_CRATE_CONDITION];
+	_npc addAction ["<img image='client\icons\money.paa'/> Vendre contenu", "client\systems\selling\sellCrateItems.sqf", [], 0.98, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_CONTENTS_CONDITION];
+	_npc addAction ["<img image='client\icons\money.paa'/> Vendre contenu dernier véhicule", "client\systems\selling\sellVehicleItems.sqf", [], 0.97, false, true, "", STORE_ACTION_CONDITION + " && " + SELL_VEH_CONTENTS_CONDITION];
 };
 
 if (isServer) then
@@ -299,7 +299,7 @@ if (hasInterface) then
 					};
 				};
 
-				_sellBox addAction ["<img image='client\icons\money.paa'/> Sell bin contents", "client\systems\selling\sellCrateItems.sqf", [true], 1, false, false, "", STORE_ACTION_CONDITION + " && " + SELL_BIN_CONDITION];
+				_sellBox addAction ["<img image='client\icons\money.paa'/> Vendre le contenu de la caisse", "client\systems\selling\sellCrateItems.sqf", [true], 1, false, false, "", STORE_ACTION_CONDITION + " && " + SELL_BIN_CONDITION];
 
 				_boxPos = getPosATL _sellBox;
 				_boxVecDir = vectorDir _sellBox;

@@ -22,7 +22,7 @@ if (typeName _this == "ARRAY" && {count _this > 4}) then
 
 		sleep 0.5;
 
-		[[format ["[ANTI-HACK] %1 is using cheating scripts. (%2)", _playerName, _hackType], _playerUID, _flagChecksum], "A3W_fnc_chatBroadcast", true, false] call A3W_fnc_MP;
+		[[format ["[ANTI-HACK] %1 utilise des scripts de cheat. (%2)", _playerName, _hackType], _playerUID, _flagChecksum], "A3W_fnc_chatBroadcast", true, false] call A3W_fnc_MP;
 		diag_log format ["ANTI-HACK: %1 (%2) was detected for [%3] with the value [%4]", _playerName, _playerUID, _hackType, _hackValue];
 
 		if (!isNil "fn_logAntihack") then

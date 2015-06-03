@@ -10,9 +10,9 @@
 
 #define DURATION 5
 #define ANIMATION "AinvPknlMstpSlayWrflDnon_medic"
-#define ERR_IN_VEHICLE "Filling Jerrycan Failed! You can't do that while in a vehicle"
-#define ERR_TOO_FAR_AWAY "Filling Jerrycan Failed! You moved to far away"
-#define ERR_CANCELLED "Filling Jerrycan Cancelled!"
+#define ERR_IN_VEHICLE "Remplissage de la jerrycan échoué! Vous ne pouvez pas faire ça depuis un véhicule"
+#define ERR_TOO_FAR_AWAY "Remplissage de la jerrycan échoué! Vous êtes parti trop loin"
+#define ERR_CANCELLED "Remplissage de la jerrycan annulé!"
 
 private ["_container", "_error"];
 _container = call mf_jerrycan_nearest_pump;
@@ -33,7 +33,7 @@ _checks = {
 		case (player distance _container > 5): {_text = ERR_TOO_FAR_AWAY};
 		case (doCancelAction): {_text = ERR_CANCELLED; doCancelAction = false;};
 		default {
-			_text = format["Refilling Jerrycan %1%2 Complete", round(100 * _progress), "%"];
+			_text = format["Remplissage de la jerrycan %1%2 terminé", round(100 * _progress), "%"];
 			_failed = false;
 		};
 	};
@@ -43,6 +43,6 @@ _success = [DURATION, ANIMATION, _checks, [_container]] call a3w_actions_start;
 if (_success) then {
 	[MF_ITEMS_JERRYCAN_FULL, 1] call mf_inventory_add;
 	[MF_ITEMS_JERRYCAN_EMPTY, 1] call mf_inventory_remove;
-	["Refilling Jerrycan Completed!", 5] call mf_notify_client;
+	["Remplissage de la jerrycan terminé !", 5] call mf_notify_client;
 };
 false;

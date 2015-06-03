@@ -51,7 +51,7 @@ class VehicleManagement {
 		class menuTitle: w_RscText
 		{
 			idc = -1;
-			text = "Vehicle Management";
+			text = "Gestion Véhicules";
 			font = "PuristaMedium";
 			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			x = 0.305 * safezoneW + safezoneX;
@@ -73,7 +73,7 @@ class VehicleManagement {
 		class weaponsText: w_RscText
 		{
 			idc = vehicleWeaponsText;
-			text = "Weapons:";
+			text = "Armes:";
 			sizeEx = 0.030;
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.575 * safezoneH + safezoneY;
@@ -84,7 +84,7 @@ class VehicleManagement {
 		class speedText: w_RscText
 		{
 			idc = vehicleSpeedText;
-			text = "Speed:";
+			text = "Vitesse:";
 			sizeEx = 0.030;
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.595 * safezoneH + safezoneY;
@@ -95,7 +95,7 @@ class VehicleManagement {
 		class usersText: w_RscText
 		{
 			idc = vehicleUsersText;
-			text = "Users:";
+			text = "Utilisateurs:";
 			sizeEx = 0.030;
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.615 * safezoneH + safezoneY;
@@ -106,7 +106,7 @@ class VehicleManagement {
 		class damageText: w_RscText
 		{
 			idc = vehicleDamageText;
-			text = "Damage:";
+			text = "Dégât:";
 			sizeEx = 0.030;
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.635 * safezoneH + safezoneY;
@@ -131,7 +131,7 @@ class VehicleManagement {
 		{
 			idc = vehicleManagementCivButton;
 			onButtonClick = "[0] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Cars/Trucks";
+			text = "Voitures/Camions";
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.67 * safezoneH + safezoneY;
 			w = 0.075 * safezoneW;
@@ -142,7 +142,7 @@ class VehicleManagement {
 		{
 			idc = vehicleManagementHeliButton;
 			onButtonClick = "[1] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Helicopters";
+			text = "Hélicoptères";
 			x = 0.384 * safezoneW + safezoneX;
 			y = 0.67 * safezoneH + safezoneY;
 			w = 0.075 * safezoneW;
@@ -153,7 +153,7 @@ class VehicleManagement {
 		{
 			idc = vehicleManagementPlaneButton;
 			onButtonClick = "[2] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Planes";
+			text = "Avions";
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.715 * safezoneH + safezoneY;
 			w = 0.075 * safezoneW;
@@ -175,7 +175,7 @@ class VehicleManagement {
 		{
 			idc = -1;
 			onButtonClick = "[4] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Hacked Vehicles";
+			text = "Véhicules Hackés";
 			x = 0.462 * safezoneW + safezoneX;
 			y = 0.715 * safezoneH + safezoneY;
 			w = 0.085 * safezoneW;
@@ -186,7 +186,7 @@ class VehicleManagement {
 		{
 			idc = -1;
 			onButtonClick = "execVM 'client\systems\adminPanel\deleteVehicle.sqf'";
-			text = "Delete Vehicle";
+			text = "Supprimer le véhicule";
 			x = 0.554 * safezoneW + safezoneX;
 			y = 0.67 * safezoneH + safezoneY;
 			w = 0.075 * safezoneW;
@@ -198,7 +198,7 @@ class VehicleManagement {
 		{
 			idc = -1;
 			onButtonClick = "execVM 'client\systems\adminPanel\deleteAllHackedVehicles.sqf'";
-			text = "Delete All";
+			text = "Supprimer tout";
 			x = 0.554 * safezoneW + safezoneX;
 			y = 0.715 * safezoneH + safezoneY;
 			w = 0.075 * safezoneW;

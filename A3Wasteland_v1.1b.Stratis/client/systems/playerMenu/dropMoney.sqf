@@ -12,7 +12,7 @@ disableSerialization;
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat "You are already performing another action!";
+	player globalChat "Vous êtes déja en train de faire autre chose!";
 };
 
 private["_money","_pos","_cash"];

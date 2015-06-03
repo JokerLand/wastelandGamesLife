@@ -27,9 +27,9 @@ _setupVars =
 
 	_missionType = switch (true) do
 	{
-		case ({_vehicleClass isKindOf _x} count ["B_APC_Tracked_01_AA_F", "O_APC_Tracked_02_AA_F"] > 0): { "Anti Aircraft Vehicle" };
-		case (_vehicleClass isKindOf "Tank_F"):                                                          { "Infantry Fighting Vehicle" };
-		default                                                                                          { "Armored Personnel Carrier" };
+		case ({_vehicleClass isKindOf _x} count ["B_APC_Tracked_01_AA_F", "O_APC_Tracked_02_AA_F"] > 0): { "Véhicule AA" };
+		case (_vehicleClass isKindOf "Tank_F"):                                                          { "VBCI" };
+		default                                                                                          { "APC" };
 	};
 
 	_locationsArray = MissionSpawnMarkers;

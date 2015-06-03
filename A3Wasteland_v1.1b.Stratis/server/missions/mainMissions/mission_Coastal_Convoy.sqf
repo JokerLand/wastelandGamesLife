@@ -149,7 +149,7 @@ _setupObjects =
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh1 >> "displayName");
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> _veh2 >> "displayName");
 
-	_missionHintText = format ["Two <t color='%3'>%1</t> are patrolling the coasts, escorted by a <t color='%3'>%2</t>.<br/>Intercept them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
+	_missionHintText = format ["Deux <t color='%3'>%1</t> patrouillent le long des côtes, éscortés par un <t color='%3'>%2</t>.<br/>Interceptez les et récupérez leur cargaison !", _vehicleName, _vehicleName2, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -178,7 +178,7 @@ _successExec =
 	_box3 setDir random 360;
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
 
-	_successHintMessage = "The patrol has been stopped, the ammo crates are yours to take. Find them near the wreck!";
+	_successHintMessage = "La patrouille à été stoppée, vous pouvez récupérer les caisses de munitions. Trouvez les près de l'épave !";
 };
 
 _this call mainMissionProcessor;

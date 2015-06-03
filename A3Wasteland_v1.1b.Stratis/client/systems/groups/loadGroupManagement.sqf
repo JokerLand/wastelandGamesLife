@@ -95,9 +95,9 @@ while{groupManagmentActive} do
 		} forEach currentInvites;
 
 		if (isStreamFriendlyUIEnabled) then {
-			_name = "Censored(StreamFriendly:ON)";
+			_name = "Censuré(StreamFriendly:ON)";
 		};
-		_groupInviteText ctrlSetStructuredText parseText (format ["Group Invite From<br/>%1",_name]);
+		_groupInviteText ctrlSetStructuredText parseText (format ["Invitation de groupe de<br/>%1",_name]);
 	} else {
 		_groupAcceptInvite ctrlShow false;
 		_groupDeclineInvite ctrlShow false;
@@ -110,7 +110,7 @@ while{groupManagmentActive} do
 	    {
 	        //Add to list
 			if (isStreamFriendlyUIEnabled) then {
-				_namestr = "[PLAYER]";
+				_namestr = "[JOUEUR]";
 			} else {
 				_namestr = name _x;
 			};
@@ -122,7 +122,7 @@ while{groupManagmentActive} do
 	//Update group player list
 	{
 		if (isStreamFriendlyUIEnabled) then {
-			_namestr = "[PLAYER]";
+			_namestr = "[JOUEUR]";
 		} else {
 			_namestr = name _x;
 		};

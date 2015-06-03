@@ -7,7 +7,7 @@
 
 #include "defines.sqf"
 
-#define ERR_NOT_ENOUGH_FUNDS "There are not enough funds in the stash."
+#define ERR_NOT_ENOUGH_FUNDS "Il n'y a pas assez d'argent dans la planque."
 
 disableSerialization;
 private ["_crate", "_dialog", "_input", "_amount"];

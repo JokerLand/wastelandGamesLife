@@ -62,7 +62,7 @@ class ScoreGUI : IGUIBack
 		class PListTopText : w_RscTextCenter
 		{
 			idc = -1;
-			text = "Players";
+			text = "Joueurs";
 			sizeEx = 0.06 * TEXT_SCALE;
 
 			#define PListTopText_Y (PListBG_Y + CENTER(PListTopBG_H, PListTopBG_H))
@@ -98,7 +98,7 @@ class ScoreGUI : IGUIBack
 		class PListHead_Name : w_RscStructuredTextLeft
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>Name</t>";
+			text = "<t underline='true' shadow='0'>Nom</t>";
 			size = PListHead_textSize;
 
 			x = PListHead_Name_X;
@@ -113,7 +113,7 @@ class ScoreGUI : IGUIBack
 		class PListHead_PKills : w_RscStructuredText
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>P. kills</t>"; // Alt + 255
+			text = "<t underline='true' shadow='0'>Frags</t>"; // Alt + 255
 			size = PListHead_textSize;
 
 			x = PListHead_PKills_X;
@@ -128,7 +128,7 @@ class ScoreGUI : IGUIBack
 		class PListHead_AIKills : w_RscStructuredText
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>AI kills</t>"; // Alt + 255
+			text = "<t underline='true' shadow='0'>Frags IA</t>"; // Alt + 255
 			size = PListHead_textSize;
 
 			x = PListHead_AIKills_X;
@@ -143,7 +143,7 @@ class ScoreGUI : IGUIBack
 		class PListHead_Deaths : w_RscStructuredText
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>Deaths</t>";
+			text = "<t underline='true' shadow='0'>Morts</t>";
 			size = PListHead_textSize;
 
 			x = PListHead_Deaths_X;
@@ -158,7 +158,7 @@ class ScoreGUI : IGUIBack
 		class PListHead_Revives : w_RscStructuredText
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>Revives</t>";
+			text = "<t underline='true' shadow='0'>Réanim.</t>";
 			size = PListHead_textSize;
 
 			x = PListHead_Revives_X;
@@ -443,7 +443,7 @@ class ScoreGUI : IGUIBack
 		class TListHead_Name : w_RscStructuredTextLeft
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>Name</t>";
+			text = "<t underline='true' shadow='0'>Nom</t>";
 			size = TListHead_textSize;
 
 			x = TListHead_Name_X;
@@ -458,7 +458,7 @@ class ScoreGUI : IGUIBack
 		class TListHead_PKills : w_RscStructuredText
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>P. kills</t>"; // Alt + 255
+			text = "<t underline='true' shadow='0'>Frags</t>"; // Alt + 255
 			size = TListHead_textSize;
 
 			x = TListHead_PKills_X;
@@ -473,7 +473,7 @@ class ScoreGUI : IGUIBack
 		class TListHead_Deaths : w_RscStructuredText
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>Deaths</t>";
+			text = "<t underline='true' shadow='0'>Morts</t>";
 			size = TListHead_textSize;
 
 			x = TListHead_Deaths_X;
@@ -488,7 +488,7 @@ class ScoreGUI : IGUIBack
 		class TListHead_Territories : w_RscStructuredText
 		{
 			idc = -1;
-			text = "<t underline='true' shadow='0'>Territories</t>";
+			text = "<t underline='true' shadow='0'>Territoires</t>";
 			size = TListHead_textSize;
 
 			x = TListHead_Territories_X;

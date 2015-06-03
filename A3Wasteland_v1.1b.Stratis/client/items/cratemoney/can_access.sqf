@@ -5,8 +5,8 @@
 //	@file Author: AgentRev, MercifulFate
 //	@file Function: mf_items_cratemoney_can_access
 
-#define ERR_IN_VEHICLE "Can't do that while in a vehicle"
-#define ERR_TOO_FAR "You are too far away"
+#define ERR_IN_VEHICLE "Vous ne pouvez pas faire ça depuis un véhicule"
+#define ERR_TOO_FAR "Vous êtes trop loin"
 
 private ["_crate", "_error"];
 

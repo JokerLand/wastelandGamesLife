@@ -131,7 +131,7 @@ _setupObjects =
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh1 >> "displayName");
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> _veh2 >> "displayName");
 
-	_missionHintText = format ["A formation of armed helicopters containing a <t color='%3'>%1</t> and two <t color='%3'>%2</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
+	_missionHintText = format ["Une formation d'hélicoptères armés contenant <t color='%3'>%1</t> et deux <t color='%3'>%2</t> patrouillent sur l'île. Détruisez les et récupérez leur cargaison !", _vehicleName, _vehicleName2, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -160,7 +160,7 @@ _successExec =
 	_box3 setDir random 360;
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
 
-	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
+	_successHintMessage = "Le ciel est à nouveau dégagé, la patrouille ennemi à été neutralisée ! Les caisses de munitions sont tombées près de l'épave.";
 };
 
 _this call mainMissionProcessor;

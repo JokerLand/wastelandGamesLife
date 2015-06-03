@@ -75,7 +75,7 @@ if (_uid call isAdmin) then
 
 				if (_vehicleType isKindOf "Helicopter") then
 				{
-					_index = _vehicleListBox lbAdd format ["[Class: Helicopter] [Type: %1]", _vehicleType];
+					_index = _vehicleListBox lbAdd format ["[Class: Hélicoptère] [Type: %1]", _vehicleType];
 					_vehicleListBox lbSetData [_index, str _x];
 				};
 
@@ -88,7 +88,7 @@ if (_uid call isAdmin) then
 
 				if (_vehicleType isKindOf "Plane") then
 				{
-					_index = _vehicleListBox lbAdd format ["[Class: Plane] [Type: %1]", _vehicleType];
+					_index = _vehicleListBox lbAdd format ["[Class: Avion] [Type: %1]", _vehicleType];
 					_vehicleListBox lbSetData [_index, str _x];
 				};
 
@@ -131,17 +131,17 @@ if (_uid call isAdmin) then
 
 				if (_vehicleOwner == "") then
 				{
-					_ownerInfo = "[Unknown owner]";
+					_ownerInfo = "[Propriétaire inconnu]";
 				}
 				else
 				{
 					if (_hackedVehicle isKindOf "ReammoBox_F") then
 					{
-						_ownerInfo = format ["[Owner: %1]", _vehicleOwner];
+						_ownerInfo = format ["[Propriétaire: %1]", _vehicleOwner];
 					}
 					else
 					{
-						_ownerInfo = format ["[Last driver: %1]", _vehicleOwner];
+						_ownerInfo = format ["[Dernier conducteur: %1]", _vehicleOwner];
 					};
 				};
 

@@ -69,7 +69,7 @@ class gunshopd
 		class DialogTitleText: w_RscTextCenter
 		{
 			idc = -1;
-			text = "Gun Store";
+			text = "Armurerie";
 			sizeEx = 0.06 * TEXT_SCALE;
 
 			x = GunStoreMainBG_X;
@@ -136,7 +136,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[0] execVM 'client\systems\gunStore\buyGuns.sqf'";
-			text = "Buy";
+			text = "Acheter";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.334 * SZ_SCALE);
@@ -149,7 +149,7 @@ class gunshopd
 		{
 			idc = gunshop_but_butammo;
 			action = "[0] execVM 'client\systems\gunStore\buyAmmo.sqf'";
-			text = "Buy";
+			text = "Acheter";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.6233 * SZ_SCALE);
@@ -162,7 +162,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[0] call populateGunStore";
-			text = "Handguns";
+			text = "Armes de poings";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -175,7 +175,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[1] call populateGunStore";
-			text = "SMGs";
+			text = "Pistolets Mitrailleurs";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -188,7 +188,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[2] call populateGunStore";
-			text = "Rifles";
+			text = "Fusils";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -201,7 +201,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[3] call populateGunStore";
-			text = "LMGs";
+			text = "Mitrailleuses";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -214,7 +214,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[5] call populateGunStore";
-			text = "Launchers";
+			text = "Lanceurs";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -227,7 +227,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[6] call populateGunStore";
-			text = "Ordnance";
+			text = "Matériel";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -240,7 +240,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[7] call populateGunStore";
-			text = "Accessories";
+			text = "Accessoires";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -254,7 +254,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[8] call populateGunStore";
-			text = "Armament";
+			text = "Armement";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -267,7 +267,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[] execVM 'client\systems\selling\sellWeapon.sqf'";
-			text = "Sell Weapon";
+			text = "Vendre Arme";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.23 * SZ_SCALE);
@@ -280,7 +280,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[] execVM 'client\systems\selling\sellUniform.sqf'";
-			text = "Sell Uniform";
+			text = "Vendre Uniforme";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + ((0.604 - 0.25) * SZ_SCALE);
@@ -293,7 +293,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[] execVM 'client\systems\selling\sellVest.sqf'";
-			text = "Sell Vest";
+			text = "Vendre Gilet";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.478 * SZ_SCALE);
@@ -306,7 +306,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "[] execVM 'client\systems\selling\sellBackpack.sqf'";
-			text = "Sell Backpack";
+			text = "Vendre Sac à Dos";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.602 * SZ_SCALE);
@@ -319,7 +319,7 @@ class gunshopd
 		{
 			idc = -1;
 			action = "closeDialog 0";
-			text = "Cancel";
+			text = "Annuler";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);

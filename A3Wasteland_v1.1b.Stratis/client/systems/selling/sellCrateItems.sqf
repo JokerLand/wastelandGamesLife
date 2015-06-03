@@ -45,7 +45,7 @@ storeSellingHandle = _this spawn
 		if (!_forceSell) then
 		{
 			playSound "FD_CP_Not_Clear_F";
-			[format ['"%1" does not contain valid items to sell.', _objName], "Error"] call BIS_fnc_guiMessage;
+			[format ['"%1" ne contient pas d items valides à vendre.', _objName], "Error"] call BIS_fnc_guiMessage;
 		};
 	};
 
@@ -65,13 +65,13 @@ storeSellingHandle = _this spawn
 		clearItemCargoGlobal _crate;
 
 		player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _sellValue, true];
-		hint format [format ['The inventory of "%1" was sold for $%2', _objName, _sellValue]];
+		hint format [format ['Le contenu de "%1" à été vendu pour $%2', _objName, _sellValue]];
 		playSound "FD_Finish_F";
 	}
 	else
 	{
 		// Add total sell value to confirm message
-		_confirmMsg = format ["You will obtain $%1 for:<br/>", [_sellValue] call fn_numbersText];
+		_confirmMsg = format ["Vous obtiendrez $%1 pour:<br/>", [_sellValue] call fn_numbersText];
 
 		// Add item quantities and names to confirm message
 		{
@@ -86,7 +86,7 @@ storeSellingHandle = _this spawn
 		} forEach _allCrateItems;
 
 		// Display confirmation
-		if ([parseText _confirmMsg, "Confirm", "Sell", true] call BIS_fnc_guiMessage) then
+		if ([parseText _confirmMsg, "Confirmer", "Vendre", true] call BIS_fnc_guiMessage) then
 		{
 			// Check if somebody else manipulated the cargo since the start
 			if (CARGO_STRING(_crate) == _originalCargo) then
@@ -118,14 +118,14 @@ storeSellingHandle = _this spawn
 
 				player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _sellValue, true];
 
-				_hintMsg = if (_deleteObject) then { 'You sold "%1" for $%2' } else { 'You sold the inventory of "%1" for $%2' };
+				_hintMsg = if (_deleteObject) then { 'Vous avez vendu "%1" pour $%2' } else { 'Vous avez vendu le contenu de "%1" pour $%2' };
 				hint format [_hintMsg, _objName, _sellValue];
 				playSound "FD_Finish_F";
 			}
 			else
 			{
 				playSound "FD_CP_Not_Clear_F";
-				[format ['The contents of "%1" have changed, please restart the selling process.', _objName], "Error"] call BIS_fnc_guiMessage;
+				[format ['Le contenu de "%1" à été modifié, veuillez recommencer le processus de vente.', _objName], "Error"] call BIS_fnc_guiMessage;
 			};
 		};
 	};

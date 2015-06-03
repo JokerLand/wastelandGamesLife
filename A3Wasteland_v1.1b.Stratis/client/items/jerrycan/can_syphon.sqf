@@ -9,12 +9,12 @@
 //@file Argument: [_vehicle] the vehicle to test
 //@file Argument: [] automatically find the nearest vehicle
 
-#define ERR_NO_VEHICLE "You are not close enough to a vehicle that can be syphoned"
-#define ERR_IN_VEHICLE "You can't do this while in a vehicle."
-#define ERR_EMPTY "The vehicle does not have enough fuel"
-#define ERR_NO_JERRYCAN "You have no empty fuel can"
-#define ERR_NO_SYPHON "You don't have a syphon hose"
-#define ERR_VEHICLE_LOCKED "Vehicle is locked/disabled"
+#define ERR_NO_VEHICLE "Vous n'êtes pas assez proche d'un véhicule pour le siphonner"
+#define ERR_IN_VEHICLE "Vous ne pouvez pas faire ça depuis un véhicule."
+#define ERR_EMPTY "Ce véhicule n'a pas assez d'essence"
+#define ERR_NO_JERRYCAN "Vous n'avez pas de jerrycan d'essence vide"
+#define ERR_NO_SYPHON "Vous n'avez pas de tuyau de siphonnage"
+#define ERR_VEHICLE_LOCKED "Le véhicule est verrouillé / neutralisé"
 #define ITEM_COUNT(ITEMID) ITEMID call mf_inventory_count
 private ["_vehicle", "_error"];
 _vehicle = objNull;

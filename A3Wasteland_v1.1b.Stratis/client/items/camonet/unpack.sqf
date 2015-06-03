@@ -9,9 +9,9 @@
 
 #define ANIM "AinvPknlMstpSlayWrflDnon_medic"
 #define DURATION 15
-#define ERR_NO_NETS "Unpacking Camouflage Netting Failed. You have not Camouflage Netting to unpack"
-#define ERR_IN_VEHICLE "Unpacking Camouflage Netting Failed. You can't do this in a vehicle."
-#define ERR_CANCELLED "Unpacking Camouflage Netting Cancelled"
+#define ERR_NO_NETS "Dépliage du Filet de Camouflage échoué. Vous n'avez pas de filet à déplier."
+#define ERR_IN_VEHICLE "Dépliage du Filet de Camouflage échoué. Vous ne pouvez pas faire ça depuis un véhicule."
+#define ERR_CANCELLED "Dépliage du Filet de Camouflage annulé"
 
 private ["_netting", "_error", "_hasFailed", "_success", "_pos"];
 
@@ -31,7 +31,7 @@ _hasFailed = {
 		case (MF_ITEMS_CAMO_NET call mf_inventory_count <= 0): {_text = ERR_NO_NETS};
 		case (doCancelAction): {doCancelAction = false; _text = ERR_CANCELLED};
 		default {
-			_text = format["Camouflage Netting %1%2 Unpacked", round(_progress*100), "%"];
+			_text = format["Filet de Camouflage %1%2 déplié", round(_progress*100), "%"];
 			_failed = false;
 		};
 	};
@@ -44,6 +44,6 @@ if (_success) then {
 	_pos = getPosATL player;
 	_netting = MF_ITEMS_CAMO_NET_TYPE createVehicle _pos;
 	_netting setPosATL _pos;
-	["You successfully unpacked the Camouflage Netting", 5] call mf_notify_client;
+	["Vous avez déplié le Filet de Camouflage", 5] call mf_notify_client;
 };
 _success

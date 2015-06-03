@@ -55,7 +55,7 @@ class RespawnSelectionDialog
 		class RspnMenuTitle: w_RscTextCenter
 		{
 			idc = -1;
-			text = "Respawn Menu";
+			text = "Menu de Réapparition";
 			sizeEx = 0.06 * TEXT_SCALE;
 
 			// relative to RspnTopBar
@@ -129,7 +129,7 @@ class RespawnSelectionDialog
 		class RspnMissionUptime: w_RscStructuredTextLeft
 		{
 			idc = respawn_MissionUptime_Text;
-			text = "Mission Uptime: 00:00:00";
+			text = "Durée de la mission: 00:00:00";
 			size = 0.04 * TEXT_SCALE;
 
 			#define RspnMissionUptime_W (0.23 * X_SCALE)
@@ -160,7 +160,7 @@ class RespawnSelectionDialog
 		{
 			idc = respawn_Random_Button;
 			onButtonClick = ""; // Action is now set dynamically in loadRespawnDialog.sqf using buttonSetAction
-			text = "Random";
+			text = "Aléatoire";
 
 			// relative to RspnTopBar
 			#define RspnRandomButton_X (RspnTopBar_X + CENTER(RspnTopBar_W, RspnButton_W)) // centered under RspnTopBar
@@ -188,7 +188,7 @@ class RespawnSelectionDialog
 		class RspnPreloadChkText: w_RscText
 		{
 			idc = -1;
-			text = "Preload";
+			text = "Pré-charger";
 			sizeEx = 0.036 * TEXT_SCALE;
 
 			// right of RspnPreloadChk
@@ -227,7 +227,7 @@ class RespawnSelectionDialog
 		class RspnSpawnButton: RspnButton
 		{
 			idc = respawn_Spawn_Button;
-			text = "Spawn"; // text alternates between "Loading..." and "Spawn" in loadRespawnDialog.sqf
+			text = "Réapparaitre"; // text alternates between "Loading..." and "Spawn" in loadRespawnDialog.sqf
 
 			x = RspnSpawnButton_X;
 			y = RspnSpawnButton_Y;
@@ -292,7 +292,7 @@ class RespawnSelectionDialog
 		{
 			idc = -1;
 			onButtonClick = "endMission 'LOSER'";
-			text = "Lobby";
+			text = "Quitter";
 
 			x = RspnLobbyButton_X;
 			y = RspnLobbyButton_Y;
@@ -304,7 +304,7 @@ class RespawnSelectionDialog
 		class RspnGroupButton: RspnButton
 		{
 			idc = -1;
-			text = "Group Management";
+			text = "Gestion Groupe";
 			onButtonClick = "[] execVM 'client\systems\groups\loadGroupManagement.sqf'";
 
 			x = RspnGroupButton_X;

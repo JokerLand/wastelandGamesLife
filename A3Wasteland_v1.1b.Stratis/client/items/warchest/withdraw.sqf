@@ -2,7 +2,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 #include "defines.sqf"
-#define ERR_NOT_ENOUGH_FUNDS "There are not enough funds in the warchest."
+#define ERR_NOT_ENOUGH_FUNDS "Il n'y a pas assez de fonds dans le coffre."
 
 disableSerialization;
 private ["_dialog", "_input", "_amount", "_var"];

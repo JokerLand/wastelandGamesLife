@@ -8,7 +8,7 @@
 //@file Description: Drink, and replenish your thrist
 //@file Argument: The amount of thirst to replenish
 
-#define ERR_CANCELLED "Drinking Cancelled";
+#define ERR_CANCELLED "Vous avez arrêté de boire";
 #define ANIMATION "AinvPknlMstpSnonWnonDnon_healed_1"
 private ["_checks", "_hasFailed"];
 _hasFailed = {
@@ -21,7 +21,7 @@ _hasFailed = {
 		case (doCancelAction): {doCancelAction = false; _text = ERR_CANCELLED;};
 		default {
 			_failed = false;
-			_text = format["Drinking %1%2 Complete", round(100*_progress), "%"];
+			_text = format["Vous avez bu %1%2", round(100*_progress), "%"];
 		};
 	};
 	[_failed, _text];
@@ -29,8 +29,7 @@ _hasFailed = {
 
 _success = [5, ANIMATION, _hasFailed, []] call a3w_actions_start;
 if (_success) then {
-	thirstLevel = (thirstLevel + _this) min 100;
-	["Your thirst has eased", 5] call mf_notify_client;
+	"Votre soif s'est calmé", 5] call mf_notify_client;
 	hint "";
 };
 _success;

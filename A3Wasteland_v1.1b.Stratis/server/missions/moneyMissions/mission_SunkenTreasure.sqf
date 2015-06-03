@@ -54,7 +54,7 @@ _setupObjects =
 	[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "picture");
-	_missionHintText = format ["A treasure containing <t color='%1'>$25,000</t> and weapons is being recovered.<br/>If you want to capture it, you will need diving gear and an underwater weapon.", moneyMissionColor];
+	_missionHintText = format ["Un trésor contenant <t color='%1'>$25,000</t> et des armes est en train d'être récupéré.<br/>Si vous voulez le capturer, vous aurez besoin d'équipement de plongée et d'une arme sous-marine.", moneyMissionColor];
 };
 
 _waitUntilMarkerPos = nil;
@@ -82,7 +82,7 @@ _successExec =
 		_x setVariable ["owner", "world", true];
 	} forEach _cashObjects;
 
-	_successHintMessage = "The treasure has been captured, well done.";
+	_successHintMessage = "Le trésor à été récupéré, bien joué.";
 };
 
 _this call moneyMissionProcessor;

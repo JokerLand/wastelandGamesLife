@@ -17,17 +17,17 @@ switch (true) do
 	case ([_uid, serverOwners] call isAdmin || isServer):
 	{
 		execVM "client\systems\adminPanel\loadServerAdministratorMenu.sqf";
-		hint "Welcome Boss";
+		hint "Bienvenue, maître";
 	};
 	case ([_uid, highAdmins] call isAdmin):
 	{
 		execVM "client\systems\adminPanel\loadAdministratorMenu.sqf";
-		hint "Welcome High Admin";
+		hint "Bienvenue, monsieur";
 	};
 	case ([_uid, lowAdmins] call isAdmin):
 	{
 		execVM "client\systems\adminPanel\loadModeratorMenu.sqf";
-		hint "Welcome Low Admin";
+		hint "Bienvenue, admin faible !";
 	};
 	case (serverCommandAvailable "#kick"):
 	{

@@ -40,7 +40,7 @@ _setupObjects =
 	[_aiGroup, _missionPos, _nbUnits] call createCustomGroup;
 
 	_missionPicture = getText (configFile >> "CfgVehicles" >> typeOf _wreck >> "picture");
-	_missionHintText = "A helicopter has come down under enemy fire!";
+	_missionHintText = "Un hélicoptère est tombé sous le feu ennemi !";
 };
 
 _waitUntilMarkerPos = nil;
@@ -59,7 +59,7 @@ _successExec =
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
 	deleteVehicle _wreck;
 
-	_successHintMessage = "The airwreck supplies have been collected, well done.";
+	_successHintMessage = "L'équipement de l'épave de l'appareil à été récupéré, bien joué.";
 };
 
 _this call sideMissionProcessor;

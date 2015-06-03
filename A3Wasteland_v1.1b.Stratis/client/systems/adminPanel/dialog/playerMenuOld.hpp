@@ -14,7 +14,7 @@ class PlayersMenu
 	class PlayersMenu_playerName:w_RscText
 	{
 		idc=-1;
-		text="Players Menu";
+		text="Menu Joueurs";
 		x=0.15;
 		y=-0.2;
 		w=0.10;
@@ -42,7 +42,7 @@ class PlayersMenu
 	class PlayersMenu_2:w_RscText
 	{
 		idc=38862;
-		text="Current Weapon: ";
+		text="Arme actuelle: ";
 		x=-0.38;
 		y=0.53;
 		w=2.0;
@@ -51,7 +51,7 @@ class PlayersMenu
 	class PlayersMenu_3:w_RscText
 	{
 		idc=38863;
-		text="Magazines: ";
+		text="Chargeurs: ";
 		x=-0.38;
 		y=0.57;
 		w=2.0;
@@ -79,7 +79,7 @@ class PlayersMenu
 	class PlayersMenu_activate2:RscButton
 	{
 		idc=19001;
-		text="Cam";
+		text="Caméra";
 		action="[1] execVM ""client\systems\adminPanel\playerSelect.sqf"";";
 		x=0.92;
 		y=0.44;
@@ -89,7 +89,7 @@ class PlayersMenu
 	class PlayersMenu_activate3:RscButton
 	{
 		idc=-1;
-		text="Warn";
+		text="Avertir";
 		action="[2] execVM ""client\systems\adminPanel\playerSelect.sqf"";";
 		x=1.10;
 		y=0.44;

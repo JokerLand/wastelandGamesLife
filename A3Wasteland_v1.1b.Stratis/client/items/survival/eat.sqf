@@ -8,7 +8,7 @@
 //@file Description: Eat and replenish your hunger
 //@file Argument: the amount of hunger to replenish
 
-#define ERR_CANCELLED "Eating Cancelled";
+#define ERR_CANCELLED "Vous avez arrêté de manger";
 #define ANIMATION "AinvPknlMstpSnonWnonDnon_healed_1"
 private ["_checks", "_success","_text"];
 _checks = {
@@ -21,7 +21,7 @@ _checks = {
 		case (doCancelAction): {doCancelAction = false; _text = ERR_CANCELLED;};
 		default {
 			_failed = false;
-			_text = format["Eating %1%2 Complete", round(100*_progress), "%"];
+			_text = format["Vous avez mangé %1%2", round(100*_progress), "%"];
 		};
 	};
 	[_failed, _text];
@@ -30,7 +30,7 @@ _checks = {
 _success = [5, ANIMATION, _checks, []] call a3w_actions_start;
 if (_success) then {
 	hungerLevel = (hungerLevel + _this) min 100;
-	["Your hunger has eased", 5] call mf_notify_client;
+	["Votre faim s'est apaisée", 5] call mf_notify_client;
 	hint "";
 };
 _success;

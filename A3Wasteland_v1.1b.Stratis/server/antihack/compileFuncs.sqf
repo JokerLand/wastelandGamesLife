@@ -32,7 +32,7 @@ _packetKey = call compile (_assignPacketKey + "_mpPacketKey");
 		if (!isServer && {str (missionNamespace getVariable [_func, ""]) != str _finalVal}) then
 		{
 			uiNamespace setVariable ["BIS_fnc_guiMessage_status", false];
-			_msgBox = ["The antihack failed to compile.<br/>Please restart the game."] spawn BIS_fnc_guiMessage;
+			_msgBox = ["La compilation anti-hack à échouée.<br/>Veuillez redémarrer le jeu."] spawn BIS_fnc_guiMessage;
 			_time = diag_tickTime;
 			waitUntil {scriptDone _msgBox || diag_tickTime - _time >= 5};
 			endMission "LOSER";

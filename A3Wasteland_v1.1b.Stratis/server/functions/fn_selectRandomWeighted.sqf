@@ -54,7 +54,7 @@ if (_weightsTotal > 0) then
 	}
 	else
 	{
-		["Your computer is broken."] call BIS_fnc_error;
+		["Votre ordinateur est cassé."] call BIS_fnc_error;
 		nil
 	};
 }

@@ -12,7 +12,7 @@ switch (playerSide) do
 {
 	case EAST: { _funds = pvar_warchest_funds_east };
 	case WEST: { _funds = pvar_warchest_funds_west };
-	default {hint "WarchestRefrest - This Shouldnt Happen"};
+	default {hint "CoffreRefrest - Cela ne devrait pas arriver"};
 };
 
 _text = _warchest displayCtrl IDC_FUNDS;

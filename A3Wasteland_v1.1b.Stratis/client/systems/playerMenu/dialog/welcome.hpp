@@ -20,7 +20,7 @@ class WelcomeMessage {
 			w = 1; h = 0.7;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
-			text = "Welcome";
+			text = "Bienvenue";
 		};
 	};
 };

@@ -58,7 +58,7 @@ class vehshopd
 		class DialogTitleText: w_RscTextCenter
 		{
 			idc = -1;
-			text = "Vehicle Store";
+			text = "Magasin de Véhicules";
 			sizeEx = 0.06 * TEXT_SCALE;
 
 			x = VehStoreMainBG_X;
@@ -114,7 +114,7 @@ class vehshopd
 		{
 			idc = -1;
 			action = "[0] execVM 'client\systems\vehicleStore\buyVehicles.sqf'";
-			text = "Buy";
+			text = "Acheter";
 			sizeEx = VehStoreButton_textSize;
 
 			x = VehStoreMainBG_X + (0.334 * SZ_SCALE);
@@ -127,7 +127,7 @@ class vehshopd
 		{
 			idc = -1;
 			action = "closeDialog 0";
-			text = "Cancel";
+			text = "Annuler";
 			sizeEx = VehStoreButton_textSize;
 
 			x = VehStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -140,7 +140,7 @@ class vehshopd
 		{
 			idc = vehshop_button0;
 			action = "[0] call populateVehicleStore";
-			text = "Land";
+			text = "Terrestre";
 			sizeEx = VehStoreButton_textSize;
 
 			x = VehStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -153,7 +153,7 @@ class vehshopd
 		{
 			idc = vehshop_button1;
 			action = "[1] call populateVehicleStore";
-			text = "Armored";
+			text = "Blindés";
 			sizeEx = VehStoreButton_textSize;
 
 			x = VehStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -179,7 +179,7 @@ class vehshopd
 		{
 			idc = vehshop_button3;
 			action = "[3] call populateVehicleStore";
-			text = "Helicopters";
+			text = "Hélicoptères";
 			sizeEx = VehStoreButton_textSize;
 
 			x = VehStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -192,7 +192,7 @@ class vehshopd
 		{
 			idc = vehshop_button4;
 			action = "[4] call populateVehicleStore";
-			text = "Planes";
+			text = "Avions";
 			sizeEx = VehStoreButton_textSize;
 
 			x = VehStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -205,7 +205,7 @@ class vehshopd
 		{
 			idc = vehshop_button5;
 			action = "[5] call populateVehicleStore";
-			text = "Boats";
+			text = "Bâteaux";
 			sizeEx = VehStoreButton_textSize;
 
 			x = VehStoreMainBG_X + (0.0167 * SZ_SCALE);

@@ -23,5 +23,5 @@ if (!isNil "_senderUID") then
 	pvar_processGroupInvite = ["decline", _senderUID, _playerUID];
 	publicVariableServer "pvar_processGroupInvite";
 
-	player globalChat "You have declined the invite.";
+	player globalChat "Vous avez refusé l'invitation.";
 };

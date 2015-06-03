@@ -24,7 +24,7 @@ if (_uid call isAdmin) then
 	_selectedItem = lbCurSel _vehicleListBox;
 	_selectedItemData = _vehicleListBox lbData _selectedItem;
 
-	player commandChat format ["Deleting %1",_selectedItemData];
+	player commandChat format ["Suppression de %1",_selectedItemData];
 	{
 	    _vehicle = _X;
 		if(str(_vehicle) == _selectedItemData) then
@@ -36,7 +36,7 @@ if (_uid call isAdmin) then
 	    };
 	}forEach _allVehicles;
 
-	player commandChat "Vehicle Deleted";
+	player commandChat "Véhicule supprimé";
 
 	closeDialog 0;
 	execVM "client\systems\adminPanel\vehicleManagement.sqf";

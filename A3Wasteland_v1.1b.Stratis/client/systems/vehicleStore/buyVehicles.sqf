@@ -8,7 +8,7 @@
 
 scriptName "buyVehicles";
 
-if (!isNil "storePurchaseHandle" && {typeName storePurchaseHandle == "SCRIPT"} && {!scriptDone storePurchaseHandle}) exitWith {hint "Please wait, your previous purchase is being processed"};
+if (!isNil "storePurchaseHandle" && {typeName storePurchaseHandle == "SCRIPT"} && {!scriptDone storePurchaseHandle}) exitWith {hint "Veuillez patienter, votre précédent achat est en cours de traitement"};
 
 if (!isNil "vehicleStore_lastPurchaseTime") then
 {
@@ -16,7 +16,7 @@ if (!isNil "vehicleStore_lastPurchaseTime") then
 
 	if (_timeLeft > 0) then
 	{
-		hint format ["You need to wait %1s before buying another vehicle", ceil _timeLeft];
+		hint format ["Vous devez attendre %1 secondes avant d'acheter un autre véhicule.", ceil _timeLeft];
 		playSound "FD_CP_Not_Clear_F";
 		breakOut "buyVehicles";
 	};
@@ -52,7 +52,7 @@ storePurchaseHandle = _this spawn
 	_showInsufficientFundsError =
 	{
 		_itemText = _this select 0;
-		hint parseText format ["Not enough money for<br/>""%1""", _itemText];
+		hint parseText format ["Argent insuffisant pour<br/>""%1""", _itemText];
 		playSound "FD_CP_Not_Clear_F";
 		_price = -1;
 	};
@@ -60,7 +60,7 @@ storePurchaseHandle = _this spawn
 	_showItemSpawnTimeoutError =
 	{
 		_itemText = _this select 0;
-		hint parseText format ["<t color='#ffff00'>An unknown error occurred.</t><br/>The purchase of ""%1"" has been cancelled.", _itemText];
+		hint parseText format ["<t color='#ffff00'>Une erreure inconnue est survenue.</t><br/>L'achat de ""%1"" à été annulé.", _itemText];
 		playSound "FD_CP_Not_Clear_F";
 		_price = -1;
 	};
@@ -68,7 +68,7 @@ storePurchaseHandle = _this spawn
 	_showItemSpawnedOutsideMessage =
 	{
 		_itemText = _this select 0;
-		hint format ["""%1"" has been spawned outside, in front of the store.", _itemText];
+		hint format ["""%1"" à été livré dehors, devant le magasin.", _itemText];
 		playSound "FD_Finish_F";
 	};
 
@@ -157,7 +157,7 @@ storePurchaseHandle = _this spawn
 			vehicleStore_lastPurchaseTime = diag_tickTime;
 
 			player setVariable ["cmoney", _playerMoney - _price, true];
-			_playerMoneyText ctrlSetText format ["Cash: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
+			_playerMoneyText ctrlSetText format ["Argent: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
 
 			if (["A3W_playerSaving"] call isConfigOn) then
 			{

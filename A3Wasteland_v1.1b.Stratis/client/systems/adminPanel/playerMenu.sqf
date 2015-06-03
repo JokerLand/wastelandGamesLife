@@ -18,7 +18,7 @@ if (_uid call isAdmin) then
 {
 	_start = createDialog "PlayersMenu";
 	_punishCount = 0;
-	_lockedSide = "None";
+	_lockedSide = "Non";
 	_dialog = findDisplay playerMenuDialog;
 	_playerListBox = _dialog displayCtrl playerMenuPlayerList;
 
@@ -29,7 +29,7 @@ if (_uid call isAdmin) then
 		if(side _x == west) then {_side = "BLUFOR";};
 		if(side _x == east) then {_side = "OPFOR";};
 		if(side _x == INDEPENDENT) then {_side = "Independent";};
-		_namestr = name(_x) + " [UID:" + getplayerUID(_x) + "] [Side:" + format["%1",_side] + "] [Team Lock:"+format["%1",_lockedSide]+"] [Punish Count:" + format["%1",_punishCount]+ "]";
+		_namestr = name(_x) + " [UID:" + getplayerUID(_x) + "] [Equipe:" + format["%1",_side] + "] [Verrouillage Equipe:"+format["%1",_lockedSide]+"] [Nombre de Punitions:" + format["%1",_punishCount]+ "]";
 		_index = _playerListBox lbAdd _namestr;
 		_playerListBox lbSetData [_index, str(_x)];
 		_punishCount = 0;

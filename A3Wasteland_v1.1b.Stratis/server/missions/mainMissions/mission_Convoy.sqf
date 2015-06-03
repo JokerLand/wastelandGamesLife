@@ -112,7 +112,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _veh2 >> "picture");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh2 >> "displayName");
 
-	_missionHintText = format ["A <t color='%2'>%1</t> transporting 2 weapon crates is being escorted by armed vehicles. Stop them!", _vehicleName, mainMissionColor];
+	_missionHintText = format ["Un <t color='%2'>%1</t> transportant 2 caisses de munitions est escorté par des véhicules armés. Arrêtez les !", _vehicleName, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -137,7 +137,7 @@ _successExec =
 	_box2 setDir random 360;
 	[_box2, "mission_USLaunchers"] call fn_refillbox;
 
-	_successHintMessage = "The convoy has been stopped, the weapon crates and vehicles are now yours to take.";
+	_successHintMessage = "Le convoi à été stoppé, vous êtes libres de récupérer les munitions ainsi que les véhicules.";
 };
 
 _this call mainMissionProcessor;

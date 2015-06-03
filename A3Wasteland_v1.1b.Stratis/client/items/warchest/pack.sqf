@@ -4,10 +4,10 @@
 #include "mutex.sqf"
 #define ANIM "AinvPknlMstpSlayWrflDnon_medic"
 #define DURATION MF_ITEMS_WARCHEST_PACK_DURATION
-#define ERR_CANCELLED "Packing Warchest Cancelled"
-#define ERR_IN_VEHICLE "Packing Warchest Failed: You can't do that in a vehicle."
-#define ERR_TOO_FAR_AWAY "Packing Warchest Failed: You moved too far away."
-#define ERR_SOMEONE_ELSE "Packing Warchest Failed: Someone else beat you."
+#define ERR_CANCELLED "Démontage du coffre annulé"
+#define ERR_IN_VEHICLE "Démontage du coffre échoué: Vous ne pouvez pas faire ça depuis un véhicule."
+#define ERR_TOO_FAR_AWAY "Démontage du coffre échoué: Vous êtes parti trop loin."
+#define ERR_SOMEONE_ELSE "Démontage du coffre échoué: Quelqu'un l'a déja fait."
 private ["_warchest", "_error", "_success"];
 _warchest = [] call mf_items_warchest_nearest;
 _error = [] call mf_items_warchest_can_pack;
@@ -27,7 +27,7 @@ _hasFailed = {
 		case (player distance _warchest > 5): {_text = ERR_TOO_FAR_AWAY};
 		case (doCancelAction): {doCancelAction = false; _text = ERR_CANCELLED};
 		default {
-			_text = format["Warchest %1%2 Packed", round(_progress*100), "%"];
+			_text = format["Coffre %1%2 démonté", round(_progress*100), "%"];
 			_failed = false;
 		};
 	};
@@ -43,5 +43,5 @@ if (_success) then {
 	publicVariableServer "pvar_manualObjectDelete";
 	deleteVehicle _warchest;
 	[MF_ITEMS_WARCHEST, 1] call mf_inventory_add;
-	["You successfully packed the Warchest", 5] call mf_notify_client;
+	["Vous avez démonté le coffre", 5] call mf_notify_client;
 };

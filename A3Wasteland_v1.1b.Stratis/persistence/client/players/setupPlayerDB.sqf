@@ -53,12 +53,12 @@ fn_deletePlayerData =
 			{
 				if (_preload) then
 				{
-					9999 cutText ["Preloading previous location...", "BLACK", 0.01];
+					9999 cutText ["Pré-chargement de votre dérnière position...", "BLACK", 0.01];
 					waitUntil {sleep 0.1; preloadCamera _pos};
 				}
 				else
 				{
-					9999 cutText ["Loading previous location...", "BLACK", 0.01];
+					9999 cutText ["Chargement de votre dérnière position...", "BLACK", 0.01];
 				};
 			}
 			else
@@ -84,7 +84,7 @@ fn_deletePlayerData =
 			}
 			else
 			{
-				player groupChat "Your position has been reset";
+				player groupChat "Votre position à été réinitialisée";
 			};
 		};
 

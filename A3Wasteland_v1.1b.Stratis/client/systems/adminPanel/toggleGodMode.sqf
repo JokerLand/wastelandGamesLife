@@ -26,12 +26,12 @@ if ((getPlayerUID player) call isAdmin) then
 		(findDisplay 27910) closeDisplay 0; // ReviveBlankGUI_IDD
 		(findDisplay 27911) closeDisplay 0; // ReviveGUI_IDD
 
-		hint "You are now invulnerable";
+		hint "T'es maintenant invincible";
 	}
 	else
 	{
 		player allowDamage true;
 		player setVariable ["isAdminInvulnerable", false, true];
-		hint "You are no longer invulnerable";
+		hint "Attention t'es fragile maintenant";
 	};
 };

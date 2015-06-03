@@ -207,7 +207,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _veh2 >> "picture");
 	_vehicleName = getText (configFile >> "cfgVehicles" >> _veh2 >> "displayName");
 
-	_missionHintText = format ["A convoy transporting <t color='%1'>%2</t> escorted by a <t color='%1'>%3</t> is en route to an unknown location.<br/>Stop them!", moneyMissionColor, _moneyText, _vehicleName];
+	_missionHintText = format ["Un convoi transportant <t color='%1'>%2</t> escorté par un <t color='%1'>%3</t> sont en route vers une destination inconnue.<br/>Arrêtez les !", moneyMissionColor, _moneyText, _vehicleName];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -233,7 +233,7 @@ _successExec =
 		_cash setVariable ["owner", "world", true];
 	};
 
-	_successHintMessage = "The convoy has been stopped, the money and vehicles are now yours to take.";
+	_successHintMessage = "Le convoi à été stoppé, vous êtes libres de récupérer l'argent et les véhicules.";
 };
 
 _this call moneyMissionProcessor;

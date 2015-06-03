@@ -3,7 +3,7 @@
 // ******************************************************************************************
 { deleteVehicle (_x select 0) } forEach (call findHackedVehicles);
 
-player commandChat "All Hacked Vehicles Deleted";
+player commandChat "Tous les véhicules hackés ont été supprimés";
 
 closeDialog 0;
 execVM "client\systems\adminPanel\vehicleManagement.sqf";
