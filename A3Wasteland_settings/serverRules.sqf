@@ -15,17 +15,17 @@
 "
 
 <br/>
-<font face='PuristaBold' size='22'>A3Wasteland Server Rules</font> <br/>
+<font face='PuristaBold' size='22'>Règles du Serveur - A3Wasteland</font> <br/>
 <br/>
-<font face='PuristaBold'>1.</font> Hacking or cheating will get you banned. <br/>
+<font face='PuristaBold'>1.</font> Hacker / Cheater résultera en un ban permanent. <br/>
 <br/>
-<font face='PuristaBold'>2.</font> Support your team and its objectives. <br/>
+<font face='PuristaBold'>2.</font> Aidez votre équipe à complétez ses objectifs. <br/>
 <br/>
-<font face='PuristaBold'>3.</font> No intentional teamkilling. <br/>
+<font face='PuristaBold'>3.</font> Aucun tir allié intentionnel. <br/>
 <br/>
-<font face='PuristaBold'>4.</font> Respect other players. <br/>
+<font face='PuristaBold'>4.</font> Respectez les autres joueurs. <br/>
 <br/>
-<font face='PuristaBold'>5.</font> Respect the administrators. <br/>
+<font face='PuristaBold'>5.</font> Respectez les administrateurs. <br/>
 
 "
 // Don't remove this quote

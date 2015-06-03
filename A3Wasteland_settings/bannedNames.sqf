@@ -16,7 +16,12 @@ bannedPlayerNames = compileFinal str
 	"Server Owner",
 	"Root",
 	"Bite",
-	"Sexe"
+	"Sexe",
+	"Fils de pute",
+	"Connard",
+	"Enculé",
+	"Nique",
+	"Nique ta mère"
 ];
 
 publicVariable "bannedPlayerNames";
