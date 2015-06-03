@@ -167,10 +167,10 @@ _onCaptureFinished =
 	["pvar_updateTerritoryMarkers", [_captureTeam, [[_captureName], false, _captureTeam, true]]] call fn_publicVariableAll;
 	["pvar_updateTerritoryMarkers", [_otherTeams, [[_captureName], false, _captureTeam, false]]] call fn_publicVariableAll;
 
-	_msgWinners = format ["Your team has successfully captured %1 and you've received $%2", _captureDescription, _captureValue];
+	_msgWinners = format ["Votre équipe à capturé %1 et vous avez reçu $%2", _captureDescription, _captureValue];
 	["pvar_territoryActivityHandler", [_captureTeam, [_msgWinners, _captureValue]]] call fn_publicVariableAll;
 
-	_msgOthers = format ["%1 has captured %2", _descriptiveTeamName, _captureDescription];
+	_msgOthers = format ["%1 à capturé %2", _descriptiveTeamName, _captureDescription];
 	["pvar_territoryActivityHandler", [_otherTeams, [_msgOthers]]] call fn_publicVariableAll;
 };
 
@@ -183,7 +183,7 @@ _getTeamName =
 
 	_teamName = if (typeName _team == "GROUP") then
 	{
-		"An independent group";
+		"Un groupe indépendant";
 	}
 	else
 	{

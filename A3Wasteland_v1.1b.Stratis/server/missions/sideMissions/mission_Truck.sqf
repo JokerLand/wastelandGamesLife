@@ -48,7 +48,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "picture");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _vehicleClass >> "displayName");
 
-	_missionHintText = format ["A <t color='%2'>%1</t> has been immobilized, go get it for your team.", _vehicleName, sideMissionColor];
+	_missionHintText = format ["Un <t color='%2'>%1</t> à été immobilisé, récupérez le pour votre équipe.", _vehicleName, sideMissionColor];
 };
 
 _waitUntilMarkerPos = nil;
@@ -67,7 +67,7 @@ _successExec =
 	_vehicle lock 1;
 	_vehicle setVariable ["R3F_LOG_disabled", false, true];
 
-	_successHintMessage = "The truck has been captured, well done.";
+	_successHintMessage = "Le camion à été capturé, bien joué.";
 };
 
 _this call sideMissionProcessor;
