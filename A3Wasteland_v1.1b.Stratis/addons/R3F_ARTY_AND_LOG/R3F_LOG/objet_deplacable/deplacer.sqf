@@ -14,7 +14,7 @@
 _currentAnim =	animationState player;
 _config = configFile >> "CfgMovesMaleSdr" >> "States" >> _currentAnim;
 _onLadder =	(getNumber (_config >> "onLadder"));
-if(_onLadder == 1) exitWith{player globalChat "You can't move this object while on a ladder";};
+if(_onLadder == 1) exitWith{player globalChat "Vous ne pouvez pas déplacer cet objet depuis une échelle !";};
 
 if (R3F_LOG_mutex_local_verrou) then
 {
@@ -42,7 +42,7 @@ else
 		};
 	};
 	if(_tempVar) exitwith {
-		hint format["This object belongs to %1 and they're nearby you cannot take this.", _objet getVariable "R3F_Side"]; R3F_LOG_mutex_local_verrou = false;
+		hint format["Cet objet appartient à %1 et ils sont proches, vous ne pouvez pas le prendre.", _objet getVariable "R3F_Side"]; R3F_LOG_mutex_local_verrou = false;
 	};
 	_objet setVariable ["R3F_Side", (playerSide), true];
 

@@ -37,14 +37,14 @@ switch (_lockState) do
 			switch (true) do
 			{
 				case (!alive player): { _text = "" };
-				case (doCancelAction): { doCancelAction = false; _text = "Locking cancelled" };
-				case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
-				case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Action failed! Somebody moved the object" };
+				case (doCancelAction): { doCancelAction = false; _text = "Verrouillage annulé" };
+				case (vehicle player != player): { _text = "Opération échouée! Vous ne pouvez pas faire ça depuis un véhicule" };
+				case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Opération échouée! Quelqu'un à déplacé l'objet" };
 				case (_object getVariable ["objectLocked", false]): { _text = "Somebody else locked it before you" };
 				default
 				{
 					_failed = false;
-					_text = format ["Locking %1%2 complete", floor (_progress * 100), "%"];
+					_text = format ["Verrouillage %1%2 terminé", floor (_progress * 100), "%"];
 				};
 			};
 
@@ -61,7 +61,7 @@ switch (_lockState) do
 			pvar_manualObjectSave = netId _object;
 			publicVariableServer "pvar_manualObjectSave";
 
-			["Object locked!", 5] call mf_notify_client;
+			["Objet verrouillé !", 5] call mf_notify_client;
 		};
 
 		R3F_LOG_mutex_local_verrou = false;
@@ -118,14 +118,14 @@ switch (_lockState) do
 			switch (true) do
 			{
 				case (!alive player): {};
-				case (doCancelAction): { doCancelAction = false; _text = "Unlocking cancelled" };
-				case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
-				case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Action failed! Somebody moved the object" };
-				case !(_object getVariable ["objectLocked", false]): { _text = "Somebody else unlocked it before you" };
+				case (doCancelAction): { doCancelAction = false; _text = "Verrouillage annulé" };
+				case (vehicle player != player): { _text = "Opération échouée! Vous ne pouvez pas faire ça depuis un véhicule" };
+				case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Opération échouée! Quelqu'un à déplacé l'objet" };
+				case !(_object getVariable ["objectLocked", false]): { _text = "Quelqu'un l'a déja déverouiller avant vous" };
 				default
 				{
 					_failed = false;
-					_text = format ["Unlocking %1%2 complete", floor (_progress * 100), "%"];
+					_text = format ["Déverouillage %1%2 terminé", floor (_progress * 100), "%"];
 				};
 			};
 
@@ -144,7 +144,7 @@ switch (_lockState) do
 			pvar_manualObjectSave = netId _object;
 			publicVariableServer "pvar_manualObjectSave";
 
-			["Object unlocked!", 5] call mf_notify_client;
+			["Objet déverouillé !", 5] call mf_notify_client;
 		};
 
 		R3F_LOG_mutex_local_verrou = false;

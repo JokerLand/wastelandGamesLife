@@ -66,7 +66,7 @@ case 1: {//weap info, fill magazines
 		GET_CTRL(balca_WC_weapon_shortcut_IDC) ctrlSetText (_picture);
 		_lb = parseText "<br/>";
 		_text = composeText ["Class: ",str configName(_weapon),_lb,
-			"DisplayName: ",str _displayName,_lb,
+			"Nom: ",str _displayName,_lb,
 			"Dispersion: ",str _dispersion,_lb,_lb,
 			 parseText _library];
 		GET_CTRL(balca_WC_weap_info_IDC) ctrlSetStructuredText _text;
@@ -102,17 +102,17 @@ case 3: {//ammo info
 
 		_lb = parseText "<br/>";
 		_text = composeText ["Class: ",str _mag,_lb,
-			"Ammo class: ",str _shell,_lb,
-			"DisplayName: ",str _displayName,_lb,
-			"Count: ",str _count,_lb,
-			"Damage: ", str _hit,_lb];
+			"Classname munition: ",str _shell,_lb,
+			"Nom: ",str _displayName,_lb,
+			"Nombre: ",str _count,_lb,
+			"Dégâts: ", str _hit,_lb];
 		if (_ACE_damage >0) then {
-		_text = composeText [_text,"ACE damage: ",str _ACE_damage,_lb];
+		_text = composeText [_text,"Dégâts ACE: ",str _ACE_damage,_lb];
 		};
 		if (_indirectHit >0) then {
-		_text = composeText [_text,"Indirect damage: ",str _indirectHit,_lb,"Explosion radius: ", str _indirectHitRange,_lb];
+		_text = composeText [_text,"Dégâts indirects: ",str _indirectHit,_lb,"Rayon de l'explosion: ", str _indirectHitRange,_lb];
 		};
-		_text = composeText [_text,"InitSpeed: ",str _initSpeed,_text,"AirFriction: ",str _airFriction,_lb,"LifeTime: ", str _timeToLive];
+		_text = composeText [_text,"Vitesse initiale: ",str _initSpeed,_text,"Friction de l'air: ",str _airFriction,_lb,"Durée: ", str _timeToLive];
 		GET_CTRL(balca_WC_magazine_info_IDC) ctrlSetStructuredText _text;
 	};
 

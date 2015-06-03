@@ -23,29 +23,29 @@ case 0: {//init
 	_displayName = getText(configFile >> "cfgWeapons" >> _weapon >> "displayName");
 	_mode_text = switch PG_get(target_mode) do {
 		case 0: {
-			composeText ["	Target mode: static land",_lb,
+			composeText ["	Mode de ciblage: Terrestre statique",_lb,
 				"Distance: ",str _tdist,_lb,
-				"Speed: ", str _tspeed,_lb,_lb];
+				"Vitesse: ", str _tspeed,_lb,_lb];
 			};
 		case 1: {
-			composeText ["	Target mode: random land",_lb,
+			composeText ["	Mode de ciblage: Terretstre aléatoire",_lb,
 				"Distance: ",str _tdist," +/- ",str _rdist,_lb,
-				"Speed: ", str _rspeed,_lb,_lb];
+				"Vitesse: ", str _rspeed,_lb,_lb];
 		};
 		case 2: {
-			composeText ["	Target mode: AI land",_lb,_lb];
+			composeText ["	Mode de ciblage: IA Terrestre",_lb,_lb];
 		};
 		case 3: {
-			composeText ["	Target mode: AI air",_lb,_lb];
+			composeText ["	Mode de ciblage: IA Aérienne",_lb,_lb];
 		};
 		default {""};
 	};
 	_text = composeText [_mode_text,
-		"	Weapon: ",_displayName,_lb,
-		"Shots: ",str _shots,_lb,
-		"Hits: ", str _hits,_lb,
+		"	Arme: ",_displayName,_lb,
+		"Tirs: ",str _shots,_lb,
+		"Impacts: ", str _hits,_lb,
 		"Kills: ", str _kills,_lb,
-		"Accuracy: ", str (_hits/(_shots max 1)),_lb];
+		"Précision: ", str (_hits/(_shots max 1)),_lb];
 	GET_CTRL(balca_stat_text_IDC) ctrlSetStructuredText _text;
 };
 case 1: {//reset

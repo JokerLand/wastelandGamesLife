@@ -139,7 +139,7 @@ else
 					player switchMove "";
 				}
 				else {
-					player globalChat "You can't tow more than one vehicle.";
+					player globalChat "Vous ne pouvez pas remorquer plus d'un véhicule.";
 				};
 			}
 			else

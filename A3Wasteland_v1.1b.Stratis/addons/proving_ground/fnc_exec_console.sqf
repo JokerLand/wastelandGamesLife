@@ -52,7 +52,7 @@ switch (_mode) do {
 		};
 	};
 	case 4: {//exec globally
-		["This feature has been disabled."] spawn BIS_fnc_guiMessage;
+		["Cette fonctionnalité à été désactivé."] spawn BIS_fnc_guiMessage;
 		/*GET_CTRL(balca_debug_console_result_IDC) ctrlSetText '';
 		_command = ctrlText balca_debug_console_edit_IDC;
 		_console_history = __uiGet(balca_console_history);
@@ -66,7 +66,7 @@ switch (_mode) do {
 		// processInitCommands;
 	};
 	case 5: {//exec on server
-		["This feature has been disabled."] spawn BIS_fnc_guiMessage;
+		["Cette fonctionnalité à été désactivé."] spawn BIS_fnc_guiMessage;
 		/*GET_CTRL(balca_debug_console_result_IDC) ctrlSetText '';
 		_command = ctrlText balca_debug_console_edit_IDC;
 		_console_history = __uiGet(balca_console_history);

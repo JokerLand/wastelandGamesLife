@@ -1,9 +1,9 @@
 #include "defs.hpp"
 if PG_get(Autoheal) then {
 	PG_set(Autoheal,false);
-	hint "Autoheal disabled";
+	hint "Soins auto désactivé";
 }else{
-	hint "Autoheal enabled";
+	hint "Soins auto activé";
 	PG_set(Autoheal,true);
 	[] spawn {
 		while {PG_get(Autoheal)} do {

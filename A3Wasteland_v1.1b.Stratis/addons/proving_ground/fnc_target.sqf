@@ -170,10 +170,10 @@ case 2: {//info
 		};
 		_lb = parseText "<br/>";
 		_text = composeText [str configName(_vehicle),_lb,
-			"DisplayName: ",str _displayName,_lb,
-			"Armor: ", str _armor,_lb,
-			"MaxSpeed: ", str _maxSpeed,_lb,
-			"Weapons: ", str _weapons,_lb];
+			"Nom: ",str _displayName,_lb,
+			"Blindage: ", str _armor,_lb,
+			"Vitesse Max. : ", str _maxSpeed,_lb,
+			"Armes: ", str _weapons,_lb];
 		GET_CTRL(balca_target_veh_info_IDC) ctrlSetStructuredText _text;
 	};
 case 3: {//add target

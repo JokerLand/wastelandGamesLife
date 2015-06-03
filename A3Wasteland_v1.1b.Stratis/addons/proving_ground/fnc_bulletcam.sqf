@@ -8,11 +8,11 @@ switch true do {
 				default {
 					PG_set(bullettime,1);
 					PG_set(bulletcam,false);
-					hint "Bulletcam disabled";
+					hint "Killcam désactivée";
 				};
 			};
 		}else{
-			hint "Bulletcam enabled";
+			hint "Killcam activée";
 			PG_set(bulletcam,true);
 		};
 	};
@@ -20,10 +20,10 @@ switch true do {
 		if PG_get(hitmarker) then {
 			PG_set(hitmarker,false);
 			{deleteMarkerLocal _x} forEach PG_get(hitmarkers);
-			hint "Hitmarker disabled";
+			hint "Hitmarker désactivé";
 		}else{
 			PG_set(hitmarker,true);
-			hint "Hitmarker enabled";
+			hint "Hitmarker activé";
 		};
 	};
 };

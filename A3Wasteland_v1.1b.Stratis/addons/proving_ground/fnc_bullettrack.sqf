@@ -38,7 +38,7 @@ _trackCam = {
 		_cam camcommit 5*(time - _lastTime);
 		cutRsc ["balca_debug_hint","PLAIN"];
 		GET_CTRL(balca_hint_text_IDC) ctrlSetText format ["%1",_ammo];
-		GET_CTRL(balca_hint_text2_IDC) ctrlSetText format ["Speed: %1",round(_spd)];
+		GET_CTRL(balca_hint_text2_IDC) ctrlSetText format ["Vitesse: %1",round(_spd)];
 	};
 
 	setAccTime 1;

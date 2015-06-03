@@ -13,9 +13,9 @@ FAR_Player_Actions =
 		// addAction args: title, filename, (arguments, priority, showWindow, hideOnUse, shortcut, condition, positionInModel, radius, radiusView, showIn3D, available, textDefault, textToolTip)
 		{ [player, _x] call fn_addManagedAction } forEach
 		[
-			["<t color='#00C900'>" + "Revive" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_revive"], 100, true, true, "", FAR_Check_Revive],
-			["<t color='#00C900'>" + "Stabilize" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_stabilize"], 99, true, true, "", FAR_Check_Stabilize],
-			["<t color='#C9C900'>" + "Drag" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_drag"], 98, true, true, "", FAR_Check_Dragging]
+			["<t color='#00C900'>" + "Réanimer" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_revive"], 100, true, true, "", FAR_Check_Revive],
+			["<t color='#00C900'>" + "Stabiliser" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_stabilize"], 99, true, true, "", FAR_Check_Stabilize],
+			["<t color='#C9C900'>" + "Traîner" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_drag"], 98, true, true, "", FAR_Check_Dragging]
 		];
 	};
 }
@@ -130,7 +130,7 @@ FAR_Drag =
 {
 	if (primaryWeapon player == "") exitWith
 	{
-		titleText ["You need a primary weapon to be able to drag,\notherwise your player will freeze.\n(Arma 3 bug)", "PLAIN DOWN", 0.5];
+		titleText ["Vous devez avoir une arme principale pour pouvoir traîner,\nsinon votre joueur peut freezer.\n(Bug Arma 3)", "PLAIN DOWN", 0.5];
 	};
 
 	FAR_isDragging = true;
@@ -149,9 +149,9 @@ FAR_Drag =
 	publicVariable "FAR_isDragging_EH";
 
 	// Add release action and save its id so it can be removed
-	_id = player addAction ["<t color='#C90000'>" + "Release" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_release"], 10];
+	_id = player addAction ["<t color='#C90000'>" + "Lâcher" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_release"], 10];
 
-	player globalChat "Press ""C"" if you can't move.";
+	player globalChat "Appuyez sur ""C"" si vous ne pouvez pas bouger.";
 	player selectWeapon primaryWeapon player;
 
 	// Drag & Carry animation fix
@@ -224,11 +224,11 @@ FAR_public_EH =
 		{
 			if (isNil "_killerName") then
 			{
-				systemChat format ["%1 was injured", toString _unitName];
+				systemChat format ["%1 à été blessé", toString _unitName];
 			}
 			else
 			{
-				systemChat format ["%1 was injured by %2", toString _unitName, toString _killerName];
+				systemChat format ["%1 à été blessé par %2", toString _unitName, toString _killerName];
 			};
 		};
 	};
@@ -298,7 +298,7 @@ FAR_CheckFriendlies =
 	private ["_units", "_msg", "_medics", "_medicsText", "_dir", "_cardinal"];
 
 	_units = player nearEntities ["AllVehicles", 1000];
-	_msg = "<t underline='true'>Nearby medics</t>"; // Non-breaking space (Alt+255) between "nearby" and "medics", otherwise the underline is split between the 2 words
+	_msg = "<t underline='true'>Médics proches</t>"; // Non-breaking space (Alt+255) between "nearby" and "medics", otherwise the underline is split between the 2 words
 	_medics = [];
 	_medicsText = "";
 
@@ -323,9 +323,9 @@ FAR_CheckFriendlies =
 		_cardinal = switch (true) do
 		{
 			case (_dir >= 337.5): { "N" };
-			case (_dir >= 292.5): { "NW" };
-			case (_dir >= 247.5): { "W" };
-			case (_dir >= 202.5): { "SW" };
+			case (_dir >= 292.5): { "NO" };
+			case (_dir >= 247.5): { "O" };
+			case (_dir >= 202.5): { "SO" };
 			case (_dir >= 157.5): { "S" };
 			case (_dir >= 112.5): { "SE" };
 			case (_dir >= 67.5):  { "E" };
@@ -336,6 +336,6 @@ FAR_CheckFriendlies =
 		_medicsText = _medicsText + format ["<br/>%1 - %2m %3", name _x, floor ((vehicle _x) distance player), _cardinal];
 	} forEach _medics;
 
-	_msg + (if (_medicsText == "") then { "<br/>- none -" } else { _medicsText })
+	_msg + (if (_medicsText == "") then { "<br/>- aucun -" } else { _medicsText })
 }
 call mf_compile;

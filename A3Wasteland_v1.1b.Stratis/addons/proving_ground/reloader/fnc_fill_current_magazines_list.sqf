@@ -34,4 +34,4 @@ lbClear GET_CTRL(balca_loader_current_magazines_IDC);
 } forEach _current_magazines;
 
 _cap = [] call GFNC(get_capacity);
-GET_CTRL(balca_loader_capacity_IDC) ctrlSetText format ["Capacity %1/%2",_cap select 0,_cap select 1];
+GET_CTRL(balca_loader_capacity_IDC) ctrlSetText format ["Capacité %1/%2",_cap select 0,_cap select 1];

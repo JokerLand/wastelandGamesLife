@@ -114,7 +114,7 @@ while {true} do
 
 	if (_lastLog == 0 || diag_tickTime - _lastLog >= LOGGING_INTERVAL) then
 	{
-		diag_log format ["vehicleManagerHC - %1 cached entities out of %2", {!simulationEnabled _x} count _entities, _oldCount];
+		diag_log format ["vehicleManagerHC - %1 à mis en cache les entités de %2", {!simulationEnabled _x} count _entities, _oldCount];
 		_lastLog = diag_tickTime;
 	};
 
