@@ -47,7 +47,7 @@ _aiGroup setVariable ["A3W_missionMarkerName", _marker, true];
 if (isNil "_missionPicture") then { _missionPicture = "" };
 
 [
-	format ["%1 Objective", MISSION_PROC_TYPE_NAME],
+	format ["%1 Objectif", MISSION_PROC_TYPE_NAME],
 	_missionType,
 	_missionPicture,
 	_missionHintText,
@@ -133,7 +133,7 @@ if (_failed) then
 	};
 
 	[
-		"Objective Failed",
+		"Objectif Echoué",
 		_missionType,
 		_missionPicture,
 		if (!isNil "_failedHintMessage") then { _failedHintMessage } else { "Better luck next time!" },
@@ -188,7 +188,7 @@ else
 	};
 
 	[
-		"Objective Complete",
+		"Objectif Accompli",
 		_missionType,
 		_missionPicture,
 		_successHintMessage,

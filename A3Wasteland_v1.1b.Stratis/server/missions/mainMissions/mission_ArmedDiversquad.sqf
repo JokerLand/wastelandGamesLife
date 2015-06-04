@@ -12,7 +12,7 @@ private ["_box1", "_box2", "_boxPos", "_vehicleClass", "_vehicle"];
 
 _setupVars =
 {
-	_missionType = "Armed Diving Expedition";
+	_missionType = "Expédition Sous-marine Armée";
 	_locationsArray = SunkenMissionMarkers;
 };
 

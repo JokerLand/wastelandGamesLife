@@ -13,7 +13,7 @@ private ["_nbUnits", "_vehicleClass", "_vehicle"];
 
 _setupVars =
 {
-	_missionType = "Supply Truck";
+	_missionType = "Camion de Ravitaillement";
 	_locationsArray = MissionSpawnMarkers;
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };
 };

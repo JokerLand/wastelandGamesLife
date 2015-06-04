@@ -14,7 +14,7 @@ private ["_cashObjects", "_cash", "_cashPos", "_box1", "_boxPos", "_vehicleClass
 
 _setupVars =
 {
-	_missionType = "Sunken Treasure";
+	_missionType = "Trésor sous-marin";
 	_locationsArray = SunkenMissionMarkers;
 };
 

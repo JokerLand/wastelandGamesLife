@@ -24,7 +24,7 @@ _setupVars =
 	[
 		// Easy
 		[
-			"Small Money Shipment", // Marker text
+			"Petite Cargaison d'Argent", // Marker text
 			25000, // Money
 			[
 				[ // NATO convoy
@@ -43,7 +43,7 @@ _setupVars =
 		],
 		// Medium
 		[
-			"Medium Money Shipment", // Marker text
+			"Cargaison d'Argent Moyenne", // Marker text
 			50000, // Money
 			[
 				[ // NATO convoy
@@ -65,7 +65,7 @@ _setupVars =
 		],
 		// Hard
 		[
-			"Large Money Shipment", // Marker text
+			"Grosse Cargaison d'Argent", // Marker text
 			75000, // Money
 			[
 				[ // NATO convoy
@@ -87,7 +87,7 @@ _setupVars =
 		],
 		// Extreme
 		[
-			"Heavy Money Shipment", // Marker text
+			"Enorme Cargaison d'Argent", // Marker text
 			100000, // Money
 			[
 				[ // NATO convoy

@@ -11,7 +11,7 @@ private ["_box1", "_box2", "_boxPos"];
 
 _setupVars =
 {
-	_missionType = "Sunken Supplies";
+	_missionType = "Equipements Sous-Marins";
 	_locationsArray = SunkenMissionMarkers;
 };
 

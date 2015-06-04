@@ -13,7 +13,7 @@ private ["_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles",
 
 _setupVars =
 {
-	_missionType = "Armed Convoy";
+	_missionType = "Convoi Armé";
 	_locationsArray = LandConvoyPaths;
 };
 

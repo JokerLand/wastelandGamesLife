@@ -11,7 +11,7 @@ private ["_heliChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicl
 
 _setupVars =
 {
-	_missionType = "Hostile Helicopters";
+	_missionType = "Hélicoptères Hostiles";
 	_locationsArray = nil; // locations are generated on the fly from towns
 };
 

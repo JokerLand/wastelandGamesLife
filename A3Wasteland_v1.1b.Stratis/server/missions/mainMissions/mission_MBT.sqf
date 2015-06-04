@@ -20,7 +20,7 @@ _setupVars =
 		"I_MBT_03_cannon_F"
 	] call BIS_fnc_selectRandom;
 
-	_missionType = "Main Battle Tank";
+	_missionType = "Char d'Assaut";
 	_locationsArray = MissionSpawnMarkers;
 
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };

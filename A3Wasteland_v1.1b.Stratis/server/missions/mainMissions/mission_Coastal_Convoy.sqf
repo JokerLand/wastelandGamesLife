@@ -14,7 +14,7 @@ private ["_vehChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle
 
 _setupVars =
 {
-	_missionType = "Coastal Patrol";
+	_missionType = "Patrouille Côtière";
 	_locationsArray = CoastalConvoyPaths;
 };
 

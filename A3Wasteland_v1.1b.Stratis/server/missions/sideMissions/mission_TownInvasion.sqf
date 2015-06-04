@@ -13,7 +13,7 @@ private ["_nbUnits", "_box1", "_box2", "_townName", "_missionPos", "_buildingRad
 
 _setupVars =
 {
-	_missionType = "Town Invasion";
+	_missionType = "Prise de Ville";
 	_nbUnits = if (missionDifficultyHard) then { AI_GROUP_LARGE } else { AI_GROUP_MEDIUM };
 
 	// settings for this mission
