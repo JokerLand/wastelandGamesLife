@@ -158,3 +158,6 @@ call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 		};
 	} forEach crew _x;
 } forEach allUnitsUAV;
+
+// Status Bar
+[] execVM "addons\StatusBar\StatusBar.sqf";
