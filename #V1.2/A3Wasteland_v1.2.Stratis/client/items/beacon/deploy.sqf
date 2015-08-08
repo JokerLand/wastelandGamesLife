@@ -9,8 +9,8 @@
 //@file Argument: [player, player, _action, []] the standard "called by an action" values
 
 #define ANIM "AinvPknlMstpSlayWrflDnon_medic"
-#define ERR_CANCELLED "Action Cancelled"
-#define ERR_IN_VEHICLE "Action Failed! You can't do this in a vehicle"
+#define ERR_CANCELLED "Opération annulée"
+#define ERR_IN_VEHICLE "Opération annulée ! Vous ne pouvez pas faire ça depuis un véhicule"
 private ["_hasFailed", "_success","_pos","_uid","_beacon"];
 _hasFailed = {
 	private ["_progress", "_failed", "_text"];
@@ -21,7 +21,7 @@ _hasFailed = {
 		case (doCancelAction) :{doCancelAction = false; _text = ERR_CANCELLED;};
 		case (vehicle player != player): {_text = ERR_IN_VEHICLE};
 		default {
-			_text = format["Spawn Beacon %1%2 Deployed", round(_progress*100), "%"];
+			_text = format["Point de réapparition %1%2 déployé", round(_progress*100), "%"];;
 			_failed = false;
 		};
 	};
@@ -52,7 +52,7 @@ if (_success) then {
 	publicVariable "pvar_spawn_beacons";
 	pvar_manualObjectSave = netId _beacon;
 	publicVariableServer "pvar_manualObjectSave";
-	["You placed the Spawn Beacon successfully!", 5] call mf_notify_client;
+	["Point de réapparition actif !", 5] call mf_notify_client;
 };
 _success;
 

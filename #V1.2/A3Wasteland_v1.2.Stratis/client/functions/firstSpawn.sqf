@@ -73,11 +73,11 @@ player addEventHandler ["InventoryOpened",
 		{
 			if (_obj isKindOf "AllVehicles") then
 			{
-				["This vehicle is locked.", 5] call mf_notify_client;
+				["Ce véhicule est verrouillé.", 5] call mf_notify_client;
 			}
 			else
 			{
-				["This object is locked.", 5] call mf_notify_client;
+				["Cet objet est verrouillé.", 5] call mf_notify_client;
 			};
 
 			true
@@ -147,7 +147,7 @@ if (["A3W_combatAbortDelay", 0] call getPublicVar > 0) then
 						deleteVehicle _bomb;
 						player addMagazine _mag;
 						playSound "FD_CP_Not_Clear_F";
-						titleText [format ["You are not allowed to place remote explosives within %1m of a store.\nThe explosive has been re-added to your inventory.", _minDist], "PLAIN DOWN", 0.5];
+						titleText [format ["Vous ne pouvez pas placer de charges explosives dans un rayon de %1m autour d'un magasin.\nCet explosif à été remis dans votre inventaire.", _minDist], "PLAIN DOWN", 0.5];
 					};
 				} forEach entities "CAManBase";
 			};
@@ -187,5 +187,5 @@ if (playerSide in [BLUFOR,OPFOR] && {{_x select 0 == _uid} count pvar_teamSwitch
 		case OPFOR:  { "OPFOR" };
 	};
 
-	titleText [format ["You have been locked to %1", _side], "PLAIN", 0.5];
+	titleText [format ["Vous avez été verrouillé sur %1", _side], "PLAIN", 0.5];
 };

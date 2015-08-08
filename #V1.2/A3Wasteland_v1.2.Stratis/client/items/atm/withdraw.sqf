@@ -7,7 +7,7 @@
 
 #include "gui_defines.hpp"
 
-#define ERR_NOT_ENOUGH_FUNDS "There are not enough funds in your account."
+#define ERR_NOT_ENOUGH_FUNDS "Il n'y a pas les fonds nécessaires sur votre compte."
 
 disableSerialization;
 private ["_dialog", "_input", "_amount"];

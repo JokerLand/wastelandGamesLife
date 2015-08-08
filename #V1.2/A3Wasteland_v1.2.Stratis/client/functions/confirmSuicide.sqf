@@ -6,7 +6,7 @@
 
 if (!alive player) exitWith {};
 
-if (["Are you sure you want to suicide?", "Confirm", "Yes", true] call BIS_fnc_guiMessage) then
+if (["Êtes vous sûr de vouloir vous suicider ?", "Confirmer", "Oui", true] call BIS_fnc_guiMessage) then
 {
 	player allowDamage true;
 	player setDamage 1;

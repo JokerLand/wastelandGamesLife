@@ -33,18 +33,17 @@ _checks =
 	switch (true) do
 	{
 		case (!alive player): { _text = "" };
-		case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
-		case (player distance _object > (sizeOf typeOf _object / 3) max 2): { _text = "Action failed! You are too far away from the object" };
-
-		case (isNull _object): { _text = "The object no longer exists" };
-		case (alive _object || {alive _x} count crew _object > 0): { _text = "Action failed! You are not allowed to salvage this object" };
-		case (!isNull (_object getVariable ["R3F_LOG_est_deplace_par", objNull])): { _text = "Action failed! Somebody moved the object" };
-		case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Action failed! Somebody loaded or towed the object" };
+		case (vehicle player != player): { _text = "Opération échouée! Vous ne pouvez pas faire ça depuis un véhicule." };
+		case (player distance _object > (sizeOf typeOf _object / 3) max 2): { _text = "Opération écohuée! Vous êtes trop loin de l'objet" };
+		case (isNull _object): { _text = "Cet objet n'existe plus" };
+		case (alive _object || {alive _x} count crew _object > 0): { _text = "Opération échouée! Vous ne pouvez pas recycler cet objet" };
+		case (!isNull (_object getVariable ["R3F_LOG_est_deplace_par", objNull])): { _text = "Opération échouée! Quelqu'un à déplacé cet objet" };
+		case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Opération échouée! Quelqu'un à chargé ou attaché cet objet" };
 		case (doCancelAction): { doCancelAction = false; _text = "Salvaging cancelled" };
 		default
 		{
 			_failed = false;
-			_text = format ["Salvaging %1%2 complete", floor (_progress * 100), "%"];
+			_text = format ["Recyclage %1%2 terminé", floor (_progress * 100), "%"];
 		};
 	};
 
@@ -128,5 +127,5 @@ if (_success) then
 {
 	deleteVehicle _vehicle;
 	player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _money, true];
-	[format ["You have obtained $%1 from salvaging", [_money] call fn_numbersText], 5] call mf_notify_client;
+	[format ["Vous avez obtenu $%1 du recyclage", [_money] call fn_numbersText], 5] call mf_notify_client;
 };

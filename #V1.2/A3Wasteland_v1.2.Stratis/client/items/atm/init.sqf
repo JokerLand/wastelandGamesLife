@@ -32,5 +32,5 @@ mf_items_atm_nearest =
 
 
 _condition = "call mf_items_atm_can_access == ''";
-_action = ["<img image='client\icons\suatmm_icon.paa'/> Access ATM", mf_items_atm_access, [], 10, true, true, "", _condition];
+_action = ["<img image='client\icons\suatmm_icon.paa'/> Accéder à l'ATM", mf_items_atm_access, [], 10, true, true, "", _condition];
 ["atm-access", _action] call mf_player_actions_set;

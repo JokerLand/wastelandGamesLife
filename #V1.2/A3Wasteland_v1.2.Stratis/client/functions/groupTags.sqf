@@ -28,7 +28,7 @@ while {true} do
 				{
 					if(isStreamFriendlyUIEnabled) then
 					{
-						_namestring = "<t size='0.5' shadow='2' color='#7FFF00'>[PLAYER]</t>";
+						_namestring = "<t size='0.5' shadow='2' color='#7FFF00'>[JOUEUR]</t>";
 					} else {
 						_nameString = "<t size='0.5' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
 					};
@@ -50,7 +50,7 @@ while {true} do
 					{
 						if(isStreamFriendlyUIEnabled) then
 						{
-							_nameString = "<t size='0.5' shadow='2' color='#7FFF00'>[VEHICLE]</t>";
+							_nameString = "<t size='0.5' shadow='2' color='#7FFF00'>[VÉHICULE]</t>";
 						} else {
 							_nameString = "<t size='0.5' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
 						};

@@ -69,7 +69,7 @@ if (_type in ["uniform","vest","backpack"]) then
 	if (isNil "_newCapacity") then { _newCapacity = 0 };
 
 	_diffCapacity = _newCapacity - _currentCapacity;
-	_text = "Capacity: ";
+	_text = "Capacité: ";
 
 	switch (true) do
 	{
@@ -87,7 +87,7 @@ if (_type in ["vest","headgear"]) then
 	if (isNil "_newArmor") then { _newArmor = 0 };
 
 	_diffArmor = _newArmor - _currentArmor;
-	_text = _text + "Armor: ";
+	_text = _text + "Blindage: ";
 
 	switch (true) do
 	{

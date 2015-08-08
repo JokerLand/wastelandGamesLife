@@ -33,7 +33,7 @@ waitUntil {
 	if (animationState player != _animation) then { [player, _animation] call switchMoveGlobal };
 	if not a3w_actions_mutex then {
 		_failed = true;
-		["Action Cancelled", DURATION_FAILED] call a3w_actions_notify;
+		["Opération annulée", DURATION_FAILED] call a3w_actions_notify;
 	} else {
 		_progress = (time - _start)/_length;
 		_progressbar progressSetPosition _progress;
