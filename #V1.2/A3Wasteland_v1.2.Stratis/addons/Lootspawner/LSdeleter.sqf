@@ -63,7 +63,7 @@ while {true} do
 
 	if (_countDel > 0) then
 	{
-		diag_log format ["-- LOOTSPAWNER deleted %1 objects --", _countDel];
+		diag_log format ["-- LOOTSPAWNER à supprimé %1 objets --", _countDel];
 	};
 
 	uiSleep 60;

@@ -13,7 +13,7 @@ if !(player getVariable ["performingDuty", false]) then
 {
 	if (_hasCharge || _hasSatchel) then
 	{
-		if (["Perform your duty?", "", "Yes", "No"] call BIS_fnc_guiMessage) then
+		if (["Faire votre devoir ?", "", "Oui", "Non"] call BIS_fnc_guiMessage) then
 		{
 			player setVariable ["performingDuty", true];
 			playSound3D [call currMissionDir + "client\sounds\lastresort.wss", vehicle player, false, getPosASL player, 0.7, 1, 1000];
@@ -42,6 +42,6 @@ if !(player getVariable ["performingDuty", false]) then
 	}
 	else
 	{
-		titleText ["Get an explosive charge next time, my child.", "PLAIN", 0.5];
+		titleText ["Prends une charge explosive la prochaine fois, mon petit.", "PLAIN", 0.5];
 	};
 };

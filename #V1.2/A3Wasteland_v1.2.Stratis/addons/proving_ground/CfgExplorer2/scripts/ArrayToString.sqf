@@ -9,7 +9,7 @@ _inArray = _this select 0;
 if ((TypeName _inArray) != "ARRAY") exitWith
 {
   // "parameter error in ArrayToString.sqf"
-  diag_log text "#ArrayToString: Parameter Error in ArrayToString.sqf. Expected: Array.";
+  diag_log text "#ArrayToString: Erreur de paramètre dans ArrayToString.sqf. Expected: Array.";
 };
 
 // ***

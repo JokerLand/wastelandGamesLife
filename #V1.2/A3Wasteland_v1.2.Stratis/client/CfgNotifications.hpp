@@ -6,7 +6,7 @@
 
 class GroupInvite
 {
-	title = "Group invite";
+	title = "Invitation de groupe";
 	description = "%1";
 	iconPicture = "\A3\ui_f\Data\map\Markers\Military\end_ca.paa";
 	colorIconPicture[] = {0.7,1,0.3,1};

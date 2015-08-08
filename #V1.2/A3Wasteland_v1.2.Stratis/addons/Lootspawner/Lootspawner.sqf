@@ -114,7 +114,7 @@ getListBuildingPositionjunction = {
 		_tmpBuild = _buildingname createVehicleLocal _tmpTstPlace;
 		//check if the creation was successful
 		if (isNil {_tmpBuild}) then {
-			diag_log format["--!!ERROR!! LOOTSPAWNER in Buildingstoloot_list: %1 no viable object !!ERROR!!--", _buildingname];
+			diag_log format["--!!ERREUR!! LOOTSPAWNER dans la liste Buildingstoloot_list: %1 aucun objet viable ! !!ERREUR!!--", _buildingname];
 		} else {
 			//get spawnpositions from building
 			_poscount = 0;
@@ -176,7 +176,7 @@ getListBuildingPositionjunction = {
 				//diag_log format["-- LOOTSPAWNER DEBUG add to Buildingpositions_list: v%1v v%2v v%3v added", _buildingname, _posIdxlist, _posAdjustZlist];
 				Buildingpositions_list pushBack [_buildingname, _posIdxlist, _posAdjustZlist];
 			} else {
-				diag_log format["-- !!LOOTSPAWNER WARNING!! in Buildingstoloot_list: %1 has no building positions --", _buildingname];
+				diag_log format["-- !!ERREUR LOOTSPAWNER!! dans Buildingstoloot_list: %1 n'a aucune position de spawn de loot !! --", _buildingname];
 				Buildingpositions_list pushBack [_buildingname, [0], [0]];
 			};
 		};
@@ -187,29 +187,29 @@ getListBuildingPositionjunction = {
 //-------------------------------------------------------------------------------------
 // MAIN
 //-------------------------------------------------------------------------------------
-diag_log format["-- LOOTSPAWNER initialise ------------------------"];
+diag_log format["-- Initialisation du LOOTSPAWNER ------------------------"];
 if ((count Buildingstoloot_list) == 0) then {
-	diag_log format["--!!ERROR!! LOOTSPAWNER Buildingstoloot_list in lootBuildings.sqf MUST have one entry at least !!ERROR!!--"];
-	diag_log format["-- LOOTSPAWNER disabled --"];
+	diag_log format["--!!ERREURR!! LOOTSPAWNER Buildingstoloot_list dans lootBuildings.sqf DOIT au moins avoir une entrée !!ERREUR!!--"];
+	diag_log format["-- LOOTSPAWNER désactivé --"];
 } else {
 	_dbgTime = diag_tickTime;
 	call getListBuildingnames;
 
-	diag_log format["-- LOOTSPAWNER spawnBuilding_list ready, d: %1s", (diag_tickTime - _dbgTime)];
+	diag_log format["-- LOOTSPAWNER spawnBuilding_list prêt, d: %1s", (diag_tickTime - _dbgTime)];
 
 	_dbgTime = diag_tickTime;
 	[_tmpTstPlace] call getListBuildingPositionjunction;
 
-	diag_log format["-- LOOTSPAWNER Buildingpositions_list ready, d: %1s", (diag_tickTime - _dbgTime)];
+	diag_log format["-- LOOTSPAWNER Buildingpositions_list prêt, d: %1s", (diag_tickTime - _dbgTime)];
 
 	_dbgTime = diag_tickTime;
 	call getUsedclasses;
 
-	diag_log format["-- LOOTSPAWNER LSusedclass_list ready, d: %1s", (diag_tickTime - _dbgTime)];
+	diag_log format["-- LOOTSPAWNER LSusedclass_list prêt, d: %1s", (diag_tickTime - _dbgTime)];
 
 	//run loot deleter continously
 	LOOT_SPAWN_INTERVAL spawn LSdeleter;
-	diag_log format["-- LOOTSPAWNER LSDer started..."];
+	diag_log format["-- Démarrage LOOTSPAWNER LSDer..."];
 
 	if (swDebugLS) then {
 		dbgTime = diag_tickTime;

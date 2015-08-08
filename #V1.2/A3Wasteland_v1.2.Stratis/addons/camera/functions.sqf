@@ -597,52 +597,52 @@ camera_update_nightvision = {
   //player commandChat format["_nightvision = %1",_nightvision];
   switch (_nightvision) do {
     case 0: {
-      camera_unit commandChat format["Setting camera default mode"];
+      camera_unit commandChat format["Caméra par défaut"];
       camUseNVG false;
       false SetCamUseTi 0;
     };
     case 1: {
-      camera_unit commandChat format["Setting camera NV "];
+      camera_unit commandChat format["Caméra Vision Nocturne"];
       camUseNVG true;
       false SetCamUseTi 0;
     };
     case 2: {
-      camera_unit commandChat format["Setting camera thermal white-hot"];
+      camera_unit commandChat format["Caméra Thermique Blanc-Chaud"];
       camUseNVG false;
       true SetCamUseTi 0;
     };
     case 3: {
-      camera_unit commandChat format["Setting camera thermal black-hot"];
+      camera_unit commandChat format["Caméra Thermique Noir-Chaud"];
       camUseNVG false;
       true SetCamUseTi 1;
     };
     case 4: {
-      camera_unit commandChat format["Setting camera thermal light-green-hot"];
+      camera_unit commandChat format["Caméra Thermique Vert Clair"];
       camUseNVG false;
       true SetCamUseTi 2;
     };
     case 5: {
-      camera_unit commandChat format["Setting camera thermal dark-green-hot"];
+      camera_unit commandChat format["Caméra Thermique Vert Foncé"];
       camUseNVG false;
       true SetCamUseTi 3;
     };
     case 6: {
-      camera_unit commandChat format["Setting camera light-orange-hot "];
+      camera_unit commandChat format["Caméra Thermique Orange Clair"];
       camUseNVG false;
       true SetCamUseTi 4;
     };
     case 7: {
-      camera_unit commandChat format["Setting camera dark-orange-hot "];
+      camera_unit commandChat format["Caméra Thermique Orange Foncé"];
       camUseNVG false;
       true SetCamUseTi 5;
     };
     case 8: {
-      camera_unit commandChat format["Setting camera orange body-heat "];
+      camera_unit commandChat format["Caméra Corps Thermiques"];
       camUseNVG false;
       true SetCamUseTi 6;
     };
     case 9: {
-      camera_unit commandChat format["Setting camera colored body-heat "];
+      camera_unit commandChat format["Caméra à Coloration Thermique"];
       camUseNVG false;
       true SetCamUseTi 7;
     };
@@ -1243,7 +1243,7 @@ camera_show_info = {
   private["_target"];
 	_target = _this select 0;
 
-	hintSilent format["name: %1\ndamage: %2\nfatigue: %3\nrecoil: %4",
+	hintSilent format["nom: %1\ndégâts: %2\népuisement: %3\nrecul: %4",
 	  (name _target),
 	  (damage _target),
 	  (getFatigue _target),
@@ -1301,5 +1301,5 @@ camera_3d_tags_draw = {
 };
 
 
-diag_log format["Loading camera functions loaded ..."];
+diag_log format["Chargement des fonctions caméra  ...];
 camera_functions_defined =  true;

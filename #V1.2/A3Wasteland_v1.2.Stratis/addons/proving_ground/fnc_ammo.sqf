@@ -3,9 +3,9 @@
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)
 if PG_get(AMMO) then {
 	PG_set(AMMO,false);
-	hint "Infinite ammo disabled";
+	hint "Munitions infinies désactivées";
 }else{
-	hint "Infinite ammo enabled";
+	hint "Munitions infinies actviées";
 	PG_set(AMMO,true);
 	[] spawn {
 		while {PG_get(AMMO)} do {

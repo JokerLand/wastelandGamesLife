@@ -48,7 +48,7 @@ if (UNCONSCIOUS(_unit)) then
 
 		if (_damage >= 1 && _criticalHit) then
 		{
-			diag_log format ["KILLED by [%1] with [%2]", _source, _ammo];
+			diag_log format ["MORT par [%1] avec [%2]", _source, _ammo];
 		};
 	//};
 }
@@ -77,7 +77,7 @@ else
 
 		_damage = 0.5;
 
-		diag_log format ["INCAPACITATED by [%1] with [%2]", _source, _ammo];
+		diag_log format ["NEUTRALISÉ par [%1] avec [%2]", _source, _ammo];
 	};
 };
 
